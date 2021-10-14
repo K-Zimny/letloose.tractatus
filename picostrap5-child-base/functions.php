@@ -33,14 +33,17 @@ add_action("wp_footer",function(){ ?> <link rel='stylesheet' id='fontawesome-css
 // Open the WordPress Customizer 
 // In the field/s: "Font Family Base" or "Headings Font Family" enter the font name, in this case "Hanalei Fill"
 
-/*
-add_action("wp_head",function(){ ?> 
- <link rel="dns-prefetch" href="//fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
- <link href="https://fonts.googleapis.com/css?family=Hanalei+Fill" rel="stylesheet">
-<?php }); 
-*/
+//--------------------- rig solid font------------------------
 
+add_action("wp_head",function(){ ?> 
+ <link rel="stylesheet" href="https://use.typekit.net/voz1dcr.css">
+<?php }); 
+
+// font-family: rig-solid-bold-halftone, sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// --------------------------------------------------------------
 // OPTIONAL: ADD MORE NAV MENUS
 //register_nav_menus( array( 'third' => __( 'Third Menu', 'picostrap' ), 'fourth' => __( 'Fourth Menu', 'picostrap' ), 'fifth' => __( 'Fifth Menu', 'picostrap' ), ) );
 // THEN USE SHORTCODE:  [lc_nav_menu theme_location="third" container_class="" container_id="" menu_class="navbar-nav"]

@@ -1,4 +1,3 @@
-
 /* ============ ADD HERE YOUR CUSTOM SCSS or  plain CSS CODE. ============ 
 
 HOW DOES IT WORK?
@@ -27,9 +26,39 @@ HOW TO REFERENCE ASSETS AND IMAGES
 
  
 ************************************************		*/
-//a demo statement - uncomment to see page turn red and blush
-//body { background: red; opacity: 0.3;} 
 
-//open menus on hover
-//.dropdown:hover>.dropdown-menu { display: block;}
- 
+//---------- site width width ----------
+
+.fixed-site-width {
+  width: 95%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//---------- Nav bar Styles ----------
+
+nav .navbar-brand figure {
+  margin: 0;
+}
+
+nav .navbar-brand img {
+  height: 60px;
+}
+
+//---------- Footer Styles ----------
+
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-social-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-social-container a {
+  font-size: 30px;
+  margin: 10px;
+}

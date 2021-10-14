@@ -8,6 +8,12 @@ function picostrap_get_base_css_filename() { return "bundle.css"; }
 // DISABLE APPLICATION PASSWORDS for security
 add_filter( 'wp_is_application_passwords_available', '__return_false' );
 
+// CDN for GSAP
+wp_register_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', null, null, true );
+wp_enqueue_script('gsap');
+wp_register_script( 'gsap_scroll_trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js', null, null, true );
+wp_enqueue_script('gsap_scroll_trigger');
+
 // LOAD CHILD THEME TEXTDOMAIN
 //add_action( 'after_setup_theme', function() { load_child_theme_textdomain( 'picostrap-child', get_stylesheet_directory() . '/languages' ); } );
 
@@ -15,7 +21,7 @@ add_filter( 'wp_is_application_passwords_available', '__return_false' );
 //add_action( 'wp_enqueue_scripts',  function  () {	wp_enqueue_style( 'custom', get_stylesheet_directory_uri().'/custom.css' ); });
 
 // OPTIONAL ADDITIONAL JS FILE - just uncomment the row below
-//add_action( 'wp_enqueue_scripts', function() {	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array(/* 'jquery' */), null, true); });
+add_action( 'wp_enqueue_scripts', function() {	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array(/* 'jquery' */), null, true); });
  
 // OPTIONAL: ADD FONTAWESOME FROM CDN IN FOOTER 
 /* 

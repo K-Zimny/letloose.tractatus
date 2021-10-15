@@ -127,29 +127,6 @@ figure {
 
 //---------- buttons ----------
 
-.btn-check:focus + .btn,
-.btn:focus,
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.05rem var(--bs-secondary);
-}
-
-// Link to border generator: https://kovart.github.io/dashed-border-generator/
-
-.dash-sec-btn a {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FE8900FF' stroke-width='4' stroke-dasharray='170%2c 40' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-  border: none !important;
-  display: inline-block;
-  transition: all ease 0.3s;
-  font-size: 22px !important;
-}
-
-.dash-sec-btn a:hover,
-.dash-sec-btn a:focus,
-.dash-sec-btn a:active {
-  background: var(--bs-secondary);
-  color: var(--bs-dark);
-}
-
 //---------- site width width ----------
 
 .fixed-site-width {

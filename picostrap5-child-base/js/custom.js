@@ -6,4 +6,14 @@ console.log("Custom js file loaded");
 
 //add here your own js code. Vanilla JS welcome.
 
-// ----------GSAP testing
+jQuery(document).ready(function () {
+  console.log("ready!");
+
+  jQuery(window).on("resize", function () {
+    if (jQuery(window).width() >= 1320) {
+      jQuery("#eventDate").insertAfter(".navbar-brand");
+    } else {
+      jQuery("#eventDate").insertBefore("#homepageHeader");
+    }
+  });
+});

@@ -27,17 +27,24 @@ HOW TO REFERENCE ASSETS AND IMAGES
  
 ************************************************		*/
 
+//---------- global styles ----------
+
+body {
+  overflow-x: hidden;
+}
+
 //---------- typography ----------
 
-h1 strong {
-  font-size: 90px !important;
-}
+// h1 strong {
+//   font-size: 90px !important;
+// }
 
 h1 {
-  font-size: 30px !important;
+  font-size: 60px !important;
 }
 
-h2 {
+h2,
+.event-date p {
   font-size: 75px !important;
 }
 
@@ -46,28 +53,36 @@ h3 {
 }
 
 p {
-  font-size: 26px !important;
+  font-size: 75px !important;
 }
 
 a,
 a:visited {
-  font-size: 26px !important;
+  font-size: 75px !important;
   text-decoration: none !important;
 }
 
 li {
-  font-size: 26px !important;
+  font-size: 55px !important;
+}
+
+#wpadminbar * {
+  font-size: 13px !important;
 }
 
 /* Media Queries */
 
 @media only screen and (max-width: 1200px) {
-  h1 strong {
-    font-size: 70px !important;
+  h1 {
+    font-size: 45px !important;
   }
 
   h2 {
     font-size: 55px !important;
+  }
+
+  .event-date p {
+    font-size: 75px !important;
   }
 
   h3 {
@@ -77,7 +92,7 @@ li {
   p,
   a,
   li {
-    font-size: 20px !important;
+    font-size: 45px !important;
   }
 }
 
@@ -90,7 +105,8 @@ li {
     font-size: 35px !important;
   }
 
-  h2 {
+  h2,
+  .event-date p {
     font-size: 38px !important;
   }
 
@@ -101,7 +117,7 @@ li {
   p,
   a,
   li {
-    font-size: 20px !important;
+    font-size: 30px !important;
   }
 }
 
@@ -111,8 +127,27 @@ li {
   font-family: Karla;
 }
 
-.san-serif-1 b {
+.san-serif-1 b,
+.san-serif-1 strong {
   font-family: rig-solid-bold-halftone, sans-serif;
+}
+
+.san-serif-2 > * {
+  font-family: rig-solid-bold-halftone, sans-serif;
+}
+
+//---------- text drop shadows ----------
+
+.text-shadow h1,
+.text-shadow h2,
+.text-shadow p,
+.text-shadow a {
+  text-shadow: 3px 3px 3px #000;
+}
+
+.text-shadow-secondary-neon a {
+  color: var(--bs-secondary) !important;
+  text-shadow: 0 0 10px var(--bs-secondary);
 }
 
 //---------- img ----------
@@ -127,6 +162,45 @@ figure {
 
 //---------- buttons ----------
 
+#homepage .btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#menuBtn a {
+  font-size: 75px !important;
+}
+
+#reservationBtn a {
+  font-size: 38px !important;
+}
+
+@media only screen and (min-width: 768px) {
+  #menuBtn a {
+    font-size: 95px !important;
+  }
+
+  #reservationBtn a {
+    font-size: 55px !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #menuBtn a {
+    font-size: 120px !important;
+  }
+
+  #reservationBtn a {
+    font-size: 95px !important;
+  }
+}
+
+//---------- z-index ----------
+
+.zindex-below-1 {
+  z-index: -1;
+}
+
 //---------- site width width ----------
 
 .fixed-site-width {
@@ -139,6 +213,7 @@ figure {
 .fixed-site-width-header,
 .fixed-site-width-footer {
   width: 95%;
+  padding: 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -160,7 +235,7 @@ nav .navbar-brand figure {
 }
 
 nav .navbar-brand img {
-  height: 60px;
+  height: 90px;
 }
 
 .navbar-light .navbar-toggler {
@@ -168,6 +243,12 @@ nav .navbar-brand img {
 }
 
 @media only screen and (max-width: 767px) {
+  .fixed-site-width-header {
+    justify-content: center !important;
+  }
+  .navbar-brand {
+    margin: 0;
+  }
   nav .navbar-brand img {
     height: 40px;
   }
@@ -203,4 +284,119 @@ footer .footer-social-container a {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+//---------- Homepage styles ----------
+
+#homepageHeader {
+  min-height: 70vh;
+}
+
+#homepageHeader h1 {
+  position: relative;
+  z-index: 2;
+}
+
+#homepageKnife {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: rotate-3d 20s infinite;
+  -webkit-animation-name: rotate-3d;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#homepageKnife img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotate-3d {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+@-webkit-keyframes rotate-3d {
+  0% {
+    transform: rotatez(15deg);
+  }
+
+  50% {
+    transform: rotatez(165deg);
+  }
+
+  100% {
+    transform: rotatez(15deg);
+  }
+}
+
+// tablet + layout chanage
+
+@media only screen and (min-width: 768px) {
+  // flex layout order
+
+  #eventDate {
+    order: 1;
+    z-index: 9;
+  }
+  #reservationBtn {
+    order: 2;
+    z-index: 9;
+  }
+  #homepageHeader {
+    order: 3;
+    z-index: 9;
+  }
+  #menuBtn {
+    order: 4;
+    z-index: 9;
+  }
+  #team {
+    order: 5;
+    z-index: 9;
+  }
+  #pastEvents {
+    order: 6;
+    z-index: 9;
+  }
+  #contact {
+    order: 7;
+    z-index: 9;
+  }
+
+  // title and menu edits
+
+  #homepageHeader h1 {
+    width: 50%;
+    text-align: left;
+    transform: translateY(-100px);
+  }
+
+  #menuBtn {
+    margin-top: -400px !important;
+    text-align: left !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #homepageHeader h1 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transform: translateY(100px);
+  }
+
+  #menuBtn {
+    margin-top: -500px !important;
+    text-align: center !important;
+    transform: translateX(-350px);
+  }
 }

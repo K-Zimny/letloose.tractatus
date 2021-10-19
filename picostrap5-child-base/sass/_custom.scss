@@ -33,6 +33,10 @@ body {
   overflow-x: hidden;
 }
 
+#lc-interface {
+  font-size: 12px;
+}
+
 //---------- typography ----------
 
 // h1 strong {
@@ -327,11 +331,11 @@ footer .footer-social-container a {
   width: 100%;
   height: 75%;
   z-index: -1;
-  animation: rotate-3d 20s 0.5s infinite;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-name: rotate-3d;
-  -webkit-animation-duration: 30s;
-  -webkit-animation-iteration-count: infinite;
+  // animation: rotate-3d 20s 0.5s infinite;
+  // -webkit-animation-delay: 0.5s;
+  // -webkit-animation-name: rotate-3d;
+  // -webkit-animation-duration: 30s;
+  // -webkit-animation-iteration-count: infinite;
 }
 
 #homepageKnife img,

@@ -8,7 +8,11 @@ console.log("Custom js file loaded");
 
 jQuery(document).ready(function () {
   console.log("ready!");
-
+  if (jQuery(window).width() >= 1320) {
+    jQuery("#eventDate").insertAfter(".navbar-brand");
+  } else {
+    jQuery("#eventDate").insertBefore("#homepageHeader");
+  }
   jQuery(window).on("resize", function () {
     if (jQuery(window).width() >= 1320) {
       jQuery("#eventDate").insertAfter(".navbar-brand");

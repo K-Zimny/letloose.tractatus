@@ -37,6 +37,30 @@ body {
   font-size: 12px;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.hide-scrollbar ::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 //---------- typography ----------
 
 // h1 strong {
@@ -48,7 +72,8 @@ h1 {
 }
 
 h2,
-.event-date p {
+.event-date p,
+.contact-page .event-date p {
   font-size: 50px !important;
 }
 
@@ -86,8 +111,9 @@ li {
     font-size: 55px !important;
   }
 
-  .event-date p {
-    font-size: 75px !important;
+  .event-date p,
+  .contact-page .event-date p {
+    font-size: 50px !important;
   }
 
   h3 {
@@ -111,7 +137,8 @@ li {
   }
 
   h2,
-  .event-date p {
+  .event-date p,
+  .contact-page .event-date p {
     font-size: 38px !important;
   }
 
@@ -156,6 +183,14 @@ li {
 }
 
 .text-shadow-secondary-neon a {
+  color: var(--bs-secondary) !important;
+  text-shadow: 0 0 10px var(--bs-secondary);
+}
+.text-shadow-secondary-neon p {
+  color: var(--bs-secondary) !important;
+  text-shadow: 0 0 10px var(--bs-secondary);
+}
+.text-shadow-secondary-neon h1 {
   color: var(--bs-secondary) !important;
   text-shadow: 0 0 10px var(--bs-secondary);
 }
@@ -241,6 +276,13 @@ figure {
   padding: 0;
 }
 
+.fixed-site-width-menu {
+  width: 80%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 767px) {
   .fixed-site-width {
     width: 85%;
@@ -251,12 +293,20 @@ figure {
     width: 95%;
     padding: 0;
   }
+
+  .fixed-site-width-menu {
+    width: 95%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 //---------- Nav bar Styles ----------
 
 nav {
   padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 nav .navbar-brand figure {
@@ -339,9 +389,11 @@ footer .footer-social-container a {
 }
 
 #homepageKnife img,
-#homepageKnife svg {
+#homepageKnife svg,
+#homepageKnife video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   // opacity: 0.5;
 }
 
@@ -547,4 +599,144 @@ footer .footer-social-container a {
   }
 }
 
-// test edit
+// --------------------------------------------------------------------
+// Menu Page Style
+// --------------------------------------------------------------------
+
+.gsap-menu-container {
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.menu-course-item {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  padding: 0 0 10vh;
+}
+
+// ----- menu header + footer
+
+.course-item-header {
+  justify-content: center;
+}
+
+.course-item-header a {
+  max-width: 1200px;
+  width: 95%;
+  margin-bottom: 100px;
+}
+
+.course-item-footer {
+  justify-content: center;
+}
+
+// ----- menu items
+
+.menu-number {
+  font-family: "Fredericka the Great", cursive;
+  text-align: right;
+}
+
+.menu-number p {
+  line-height: 200px;
+  font-size: 200px !important;
+}
+
+.menu-description-list li {
+  font-size: 30px !important;
+}
+
+// --------------------------------------------------------------------
+// Contact Page Style
+// --------------------------------------------------------------------
+
+.contact-page h1 {
+  font-size: 70px !important;
+}
+
+.contact-page h2 {
+  letter-spacing: 2px;
+}
+
+.contact-page p,
+#contact-address {
+  font-size: 26px !important;
+  line-height: 35px;
+  letter-spacing: normal;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-socials a {
+  font-size: 18px !important;
+}
+
+// .contact-socials #contact-address {
+//   font-size: 18px !important;
+// }
+
+.contact-socials #contact-social-guild-row-icon {
+  display: flex;
+  align-items: center;
+}
+
+.contact-socials #contact-social-guild-row-icon figure {
+  margin: 0;
+  width: 5em;
+}
+
+.contact-socials #contact-social-guild-row-icon img {
+  height: 100%;
+}
+
+.contact-socials svg,
+.contact-socials figure {
+  width: 3em;
+  height: 3em;
+  margin: 1em;
+  color: var(--bs-secondary);
+}
+
+.contact-page video {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.contact-page #contact-info {
+  position: sticky;
+  top: 0px;
+}
+
+@media only screen and (max-width: 767px) {
+  .contact-socials #contact-social-guild-row-icon figure {
+    margin: 0;
+    // width: 4em;
+  }
+
+  .contact-socials svg,
+  .contact-socials figure {
+    // width: 2em;
+    // height: 2em;
+    margin: 0.5em;
+  }
+
+  .contact-page p {
+    font-size: 22px !important;
+  }
+
+  .contact-page h2 {
+    font-size: 30px !important;
+  }
+
+  .contact-page h1 {
+    font-size: 60px !important;
+  }
+}

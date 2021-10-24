@@ -44,6 +44,18 @@ add_action("wp_head",function(){ ?>
 // font-style: normal;
 
 // --------------------------------------------------------------
+
+//--------------------- rig solid font------------------------
+
+add_action("wp_head",function(){ ?> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+   <?php }); 
+   
+//    font-family: 'Fredericka the Great', cursive;
+   
+   // --------------------------------------------------------------
 // OPTIONAL: ADD MORE NAV MENUS
 //register_nav_menus( array( 'third' => __( 'Third Menu', 'picostrap' ), 'fourth' => __( 'Fourth Menu', 'picostrap' ), 'fifth' => __( 'Fifth Menu', 'picostrap' ), ) );
 // THEN USE SHORTCODE:  [lc_nav_menu theme_location="third" container_class="" container_id="" menu_class="navbar-nav"]

@@ -57,6 +57,33 @@ jQuery(document).ready(function () {
   } else {
     console.log("Page is a livecanvas Editor, Function not executed");
   }
+
+  // --------------------------------------------------------------------
+  // Team Page
+  // --------------------------------------------------------------------
+
+  if (jQuery(location).attr("href") !== "about:srcdoc") {
+    console.log("Page is NOT a livecanvas Editor");
+    if (jQuery(location).attr("pathname") == "/meet-the-team/") {
+      console.log("On team page");
+      if (jQuery(window).width() >= 1320) {
+        jQuery("#eventDate").insertAfter(".navbar-brand");
+      } else {
+        jQuery("#eventDate").insertBefore("#teamHeader");
+      }
+      jQuery(window).on("resize", function () {
+        if (jQuery(window).width() >= 1320) {
+          jQuery("#eventDate").insertAfter(".navbar-brand");
+        } else {
+          jQuery("#eventDate").insertBefore("#teamHeader");
+        }
+      });
+    } else {
+      console.log("Not team Page");
+    }
+  } else {
+    console.log("Page is a livecanvas Editor, Function not executed");
+  }
 });
 
 // --------------------------------------------------------------------

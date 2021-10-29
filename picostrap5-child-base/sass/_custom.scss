@@ -261,7 +261,7 @@ figure {
   z-index: -1;
 }
 
-//---------- site width width ----------
+//---------- site width ----------
 
 .fixed-site-width {
   width: 95%;
@@ -283,22 +283,30 @@ figure {
   margin-right: auto;
 }
 
+.fixed-site-width-900 {
+  width: 95%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 767px) {
   .fixed-site-width {
     width: 85%;
   }
 
-  .fixed-site-width-header,
-  .fixed-site-width-footer {
-    width: 95%;
-    padding: 0;
-  }
+  // .fixed-site-width-header,
+  // .fixed-site-width-footer {
+  //   width: 95%;
+  //   padding: 0;
+  // }
 
   .fixed-site-width-menu {
     width: 95%;
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
+  }
+
+  .fixed-site-width-900 {
+    width: 85%;
   }
 }
 
@@ -650,6 +658,27 @@ footer .footer-social-container a {
   font-size: 30px !important;
 }
 
+// menu videos
+
+.menu-course-item {
+  position: relative;
+}
+
+.menu-media {
+  width: 250px;
+  // height: 300px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // z-index: -1;
+}
+
+.menu-media video {
+  width: 100%;
+  height: 100%;
+}
+
 // --------------------------------------------------------------------
 // Contact Page Style
 // --------------------------------------------------------------------
@@ -728,7 +757,8 @@ footer .footer-social-container a {
     margin: 0.5em;
   }
 
-  .contact-page p {
+  .contact-page p,
+  #contact-address {
     font-size: 22px !important;
   }
 
@@ -739,4 +769,208 @@ footer .footer-social-container a {
   .contact-page h1 {
     font-size: 60px !important;
   }
+}
+
+// --------------------------------------------------------------------
+// Team Page Style
+// --------------------------------------------------------------------
+
+.team-page h1 {
+  font-size: 70px !important;
+}
+
+.team-page .team-members p {
+  font-size: 32px !important;
+}
+
+.team-page .team-members p span {
+  font-size: 22px !important;
+}
+
+.team-members {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.team-member {
+  margin: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .team-page h1 {
+    font-size: 60px !important;
+  }
+
+  .team-page p {
+    // font-size: 18px !important;
+  }
+
+  .team-members {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+
+// --------------------------------------------------------------------
+// WooCommerce
+// --------------------------------------------------------------------
+
+.woocommerce p,
+.woocommerce a {
+  font-size: 16px !important;
+  letter-spacing: 0;
+}
+// --------------------------------------------------------------------
+// WooCommerce Product Page
+// --------------------------------------------------------------------
+
+// woocommerce font styles
+
+#woocommerce-wrapper p,
+#woocommerce-wrapper a {
+  font-size: 26px !important;
+  letter-spacing: normal;
+}
+
+#woocommerce-wrapper .woocommerce-Price-amount.amount bdi {
+  font-size: 30px !important;
+  letter-spacing: normal;
+}
+
+#woocommerce-wrapper .woocommerce-notices-wrapper a {
+  font-size: 16px !important;
+  letter-spacing: normal;
+}
+
+#woocommerce-wrapper .reset_variations {
+  font-size: 16px !important;
+  letter-spacing: normal;
+}
+
+// WooCommerce Hidden items
+
+#woocommerce-wrapper .woocommerce-breadcrumb,
+#woocommerce-wrapper .product_meta,
+#woocommerce-wrapper .woocommerce-tabs.wc-tabs-wrapper,
+#woocommerce-wrapper .woocommerce-product-gallery__trigger {
+  display: none;
+}
+
+#woocommerce-wrapper .woocommerce-product-gallery__wrapper {
+  pointer-events: none;
+}
+
+// input field color
+
+#woocommerce-wrapper .input-text.qty.text.form-control {
+  color: #000;
+}
+
+// woocommerce add to cart button
+
+#woocommerce-wrapper .woocommerce-variation-add-to-cart button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+#woocommerce-wrapper #wc-stripe-payment-request-button-separator {
+  margin: 1rem 0 0 0 !important;
+}
+
+// --------------------------------------------------------------------
+// WooCommerce Cart Page
+// --------------------------------------------------------------------
+
+.woocommerce-cart-form .coupon {
+  display: none;
+}
+
+.woocommerce-cart-form a {
+  font-size: 30px !important;
+  letter-spacing: 0;
+}
+
+.woocommerce-message a {
+  font-size: 30px !important;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.woocommerce-cart-form__cart-item.cart_item img {
+  min-width: 100px;
+}
+
+.woocommerce-cart-form .input-text.qty.text.form-control {
+  color: #000;
+}
+
+.cart-collaterals #wc-stripe-payment-request-button-separator {
+  margin: 1rem 0 !important;
+  font-size: 30px !important;
+  letter-spacing: 0;
+}
+
+.cart-collaterals .wc-proceed-to-checkout a {
+  width: 100%;
+  font-size: 16px !important;
+  letter-spacing: 0;
+}
+
+// --------------------------------------------------------------------
+// WooCommerce Checkout
+// --------------------------------------------------------------------
+
+.woocommerce-form-coupon-toggle {
+  display: none;
+}
+
+.woocommerce-checkout #wc-stripe-payment-request-button-separator {
+  margin: 1rem 0 !important;
+  font-size: 30px !important;
+  letter-spacing: 0;
+}
+
+.woocommerce-checkout h3 {
+  font-size: 30px !important;
+  letter-spacing: 0;
+}
+
+.woocommerce-checkout label {
+  font-size: 20px !important;
+  letter-spacing: 0;
+}
+
+.woocommerce-checkout li {
+  font-size: 16px !important;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.woocommerce-checkout span {
+  font-size: 16px !important;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.woocommerce-checkout span.optional {
+  color: #fff;
+}
+
+.woocommerce-checkout input,
+.woocommerce-checkout textarea,
+.form-control:focus,
+.widget_categories select:focus,
+.widget_archive select:focus {
+  color: #000;
+}
+
+.woocommerce-checkout .shop_table.woocommerce-checkout-review-order-table span {
+  color: #fff;
+}
+
+.woocommerce-checkout-payment p,
+.woocommerce-checkout-payment a {
+  font-size: 16px !important;
+  letter-spacing: 0;
+  color: #000;
 }

@@ -60,3 +60,16 @@ add_action("wp_head",function(){ ?>
 //register_nav_menus( array( 'third' => __( 'Third Menu', 'picostrap' ), 'fourth' => __( 'Fourth Menu', 'picostrap' ), 'fifth' => __( 'Fifth Menu', 'picostrap' ), ) );
 // THEN USE SHORTCODE:  [lc_nav_menu theme_location="third" container_class="" container_id="" menu_class="navbar-nav"]
 
+// WooCommerce custom availabilty text
+
+add_filter( 'woocommerce_get_availability', 'custom_get_availability', 1, 2);
+
+function custom_get_availability( $availability, $_product ) {
+  global $product;
+  $stock = $product->get_total_stock();
+
+  if ( $_product->is_in_stock() ) $availability['availability'] = __($stock . ' Reservation(s) Remaining', 'woocommerce');
+  if ( !$_product->is_in_stock() ) $availability['availability'] = __('SOLD OUT', 'woocommerce');
+
+  return $availability;
+}

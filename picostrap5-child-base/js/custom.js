@@ -51,12 +51,16 @@ jQuery(document).ready(function () {
           jQuery("#eventDate").insertBefore("#contactHeader");
         }
       });
+      // contact footer bg color
+      jQuery("footer").addClass("bg-dark");
     } else {
       console.log("Not contact Page");
     }
   } else {
     console.log("Page is a livecanvas Editor, Function not executed");
   }
+
+  // contact footer bg color
 
   // --------------------------------------------------------------------
   // Team Page
@@ -87,8 +91,10 @@ jQuery(document).ready(function () {
 });
 
 // --------------------------------------------------------------------
-// Menu Page header/footer maniputlation
+// Menu Page
 // --------------------------------------------------------------------
+
+// header/footer maniputlation
 
 if (jQuery(location).attr("href") !== "about:srcdoc") {
   console.log("Page is NOT a livecanvas Editor");
@@ -99,23 +105,59 @@ if (jQuery(location).attr("href") !== "about:srcdoc") {
     jQuery("nav").hide();
     jQuery("footer").hide();
 
-    jQuery("html").addClass("hide-scrollbar");
+    // jQuery("html").addClass("hide-scrollbar");
+
+    jQuery(".course-item-2, .course-item-3, .course-item-footer").hide();
 
     //run gsap scroll trigger code
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.defaults({
       toggleActions: "restart pause resume pause",
-      scroller: ".gsap-menu-container",
+      // scroller: ".gsap-menu-container",
+      markers: true,
+      // pin: true,
+      start: "top=-10",
+      end: "center",
+      // onEnter: console.log("entered new slide"),
+    });
+
+    gsap.to(".course-item-1", {
+      scrollTrigger: {
+        trigger: ".course-item-1",
+        onEnter: () => {
+          console.log("entered slide 1");
+          setTimeout(function () {
+            jQuery(".course-item-2").show();
+          }, 1000);
+          // jQuery(window).mouseenter(function () {
+          //   scrollLock = true;
+          // });
+          // jQuery(".gsap-menu-container").css("overflow", "hidden");
+          // setTimeout(function () {
+          //   jQuery(".gsap-menu-container").css("overflow", "");
+          // }, 500);
+        },
+      },
+      // scrollTrigger: ".course-item-1",
+      // onEnter: () => console.log("entered slide 1"),
     });
 
     gsap.to(".course-item-2", {
-      scrollTrigger: ".course-item-2",
+      scrollTrigger: {
+        trigger: ".course-item-2",
+        onEnter: () => {
+          console.log("entered slide 2");
+        },
+      },
+      // scrollTrigger: ".course-item-2",
+      // onEnter: () => console.log("entered slide 2"),
     });
 
     gsap.to(".course-item-3", {
       scrollTrigger: {
         trigger: ".course-item-3",
+        onEnter: () => console.log("entered slide 3"),
       },
     });
   } else {

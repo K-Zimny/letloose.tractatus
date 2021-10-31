@@ -31,6 +31,15 @@ HOW TO REFERENCE ASSETS AND IMAGES
 
 body {
   overflow-x: hidden;
+  position: relative;
+  cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-cur.png"),
+    auto;
+}
+
+a {
+  cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-pointer.png")
+      0 100,
+    pointer !important;
 }
 
 #lc-interface {
@@ -315,6 +324,8 @@ figure {
 nav {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+  z-index: 99;
+  background-color: transparent;
 }
 
 nav .navbar-brand figure {
@@ -348,6 +359,11 @@ nav .navbar-brand img {
 }
 
 //---------- Footer Styles ----------
+
+footer {
+  z-index: 99;
+  position: relative;
+}
 
 footer .footer-container {
   display: flex;
@@ -385,10 +401,11 @@ footer .footer-social-container a {
 }
 
 #homepageKnife {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 75%;
+  height: 100%;
   z-index: -1;
+  inset: 0;
   // animation: rotate-3d 20s 0.5s infinite;
   // -webkit-animation-delay: 0.5s;
   // -webkit-animation-name: rotate-3d;
@@ -613,8 +630,8 @@ footer .footer-social-container a {
 
 .gsap-menu-container {
   max-height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  // overflow-y: scroll;
+  // scroll-snap-type: y mandatory;
 }
 
 .menu-course-item {

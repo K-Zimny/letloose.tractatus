@@ -29,6 +29,10 @@ HOW TO REFERENCE ASSETS AND IMAGES
 
 //---------- global styles ----------
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   position: relative;
@@ -43,7 +47,12 @@ a {
 }
 
 #lc-interface {
-  font-size: 12px;
+  font-size: 12px !important;
+}
+
+.lc-contextual-menu a {
+  font-size: 12px !important;
+  letter-spacing: 0px;
 }
 
 /* width */
@@ -207,7 +216,7 @@ li {
 //---------- img ----------
 
 img {
-  width: 100%;
+  display: block;
 }
 
 figure {
@@ -295,6 +304,13 @@ figure {
 .fixed-site-width-900 {
   width: 95%;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fixed-site-width-1200 {
+  width: 95%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -669,10 +685,19 @@ footer .footer-social-container a {
 .menu-number p {
   line-height: 200px;
   font-size: 200px !important;
+  margin-top: 10px;
 }
 
-.menu-description-list li {
+.menu-description-list p {
   font-size: 30px !important;
+  letter-spacing: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .menu-description-list p {
+    font-size: 22px !important;
+    letter-spacing: 5px;
+  }
 }
 
 // menu videos
@@ -682,18 +707,61 @@ footer .footer-social-container a {
 }
 
 .menu-media {
-  width: 250px;
+  // width: 250px;
   // height: 300px;
   position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  top: 1px;
+  // top: 35%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   // z-index: -1;
 }
 
 .menu-media video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+// ----- menu swiper
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  // text-align: center;
+  // font-size: 18px;
+  // background: #fff;
+  // color: #000;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-progressbar-fill {
+  color: red;
+  background-color: green;
 }
 
 // --------------------------------------------------------------------
@@ -805,12 +873,73 @@ footer .footer-social-container a {
 }
 
 .team-members {
-  display: flex;
-  flex-flow: row nowrap;
+  // display: flex;
+  // flex-flow: row nowrap;
+  // justify-content: center;
 }
 
 .team-member {
-  margin: 25px;
+  // padding: 25px;
+  // max-width: 300px;
+  // width: 100%;
+  position: relative;
+}
+
+.team-member-spacer {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: var(--bs-secondary);
+  width: 100%;
+  left: 0;
+  bottom: -30px;
+}
+
+.team-member:first-child {
+  margin-top: 0 !important;
+}
+
+.team-member:last-child {
+  margin-bottom: 0 !important;
+}
+
+// .team-member:nth-child(odd) .team-member-img-title {
+//   float: left;
+//   margin: 0px 30px 30px 0;
+// }
+
+// .team-member:nth-child(even) .team-member-img-title {
+//   float: right;
+//   margin: 0px 30px 30px 0;
+// }
+
+.team-member-img-title {
+  float: left;
+  margin: 0px 30px 30px 0;
+  width: 300px;
+}
+
+.team-member-img-title p:first-child a {
+  font-size: 32px !important;
+  letter-spacing: 7px;
+}
+
+.team-member-img-title p:first-child a strong {
+  font-size: 26px !important;
+  letter-spacing: 5px;
+  font-weight: normal;
+  position: relative;
+  color: var(--bs-secondary);
+}
+
+.team-member-img-title img {
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+}
+
+.team-page .team-members .team-member-bio p {
+  font-size: 24px !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -822,9 +951,26 @@ footer .footer-social-container a {
     // font-size: 18px !important;
   }
 
-  .team-members {
-    display: flex;
-    flex-flow: column nowrap;
+  .team-page .team-members .team-member-bio p {
+    font-size: 18px !important;
+  }
+
+  // .team-members {
+  //   display: flex;
+  //   flex-flow: column nowrap;
+  // }
+
+  // .team-member:nth-child(odd) .team-member-img-title,
+  // .team-member:nth-child(even) .team-member-img-title {
+  //   float: none;
+  //   margin: 30px 0;
+  // }
+
+  .team-member-img-title {
+    float: none;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

@@ -73,3 +73,14 @@ function custom_get_availability( $availability, $_product ) {
 
   return $availability;
 }
+
+// ------------------------------
+// -----------swiperjs-----------
+// ------------------------------
+
+wp_register_script( 'swiper_js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js', null, null, true );
+wp_enqueue_script('swiper_js');
+add_action("wp_head",function(){ ?> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+   <?php }); 
+   

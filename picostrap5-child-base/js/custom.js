@@ -15,11 +15,26 @@ jQuery(document).ready(function () {
 
   if (jQuery(location).attr("href") !== "about:srcdoc") {
     console.log("Page is NOT a livecanvas Editor");
+
+    if (jQuery(location).attr("pathname") == "/") {
+      jQuery("footer").css("background", "#121212");
+    }
+
+    // --------------------------------------------------------------------
+    // Model Network
+    // --------------------------------------------------------------------
+    // jQuery(document).ready(function () {
+    //   if (jQuery(window).width() <= 1200) {
+    //     jQuery("#Modal-fnv").modal("show");
+    //   }
+    // });
+
     if (jQuery(window).width() >= 1320) {
       jQuery("#eventDate").insertAfter(".navbar-brand");
     } else {
       jQuery("#eventDate").insertBefore("#homepageHeader");
     }
+
     jQuery(window).on("resize", function () {
       if (jQuery(window).width() >= 1320) {
         jQuery("#eventDate").insertAfter(".navbar-brand");
@@ -107,59 +122,234 @@ if (jQuery(location).attr("href") !== "about:srcdoc") {
 
     jQuery("html").addClass("hide-scrollbar");
 
-    // jQuery(".course-item-2, .course-item-3, .course-item-footer").hide();
+    const targetNode_1 = document.getElementById("ss-item-1");
+    const config_1 = { attributes: true, childList: true, subtree: true };
+    const callback_1 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-1").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-1").css("animation-name", "bg-fade");
+            jQuery("#path-1").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-1").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-1").css("display", "block");
+                jQuery("#course-item-1").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_1 = new MutationObserver(callback_1);
+    observer_1.observe(targetNode_1, config_1);
 
-    //run gsap scroll trigger code
-    // gsap.registerPlugin(ScrollTrigger);
+    // Slider 2 Observation
 
-    // ScrollTrigger.defaults({
-    // toggleActions: "restart pause resume pause",
-    // scroller: ".gsap-menu-container",
-    // markers: true,
-    // pin: true,
-    // start: "top=-10",
-    // end: "center",
-    // onEnter: console.log("entered new slide"),
-    // });
+    const targetNode_2 = document.getElementById("ss-item-2");
+    const config_2 = { attributes: true, childList: true, subtree: true };
+    const callback_2 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-2").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-2").css("animation-name", "bg-fade");
+            jQuery("#path-2").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-2").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-2").css("display", "block");
+                jQuery("#course-item-2").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_2 = new MutationObserver(callback_2);
+    observer_2.observe(targetNode_2, config_2);
 
-    // gsap.to(".course-item-1", {
-    //   scrollTrigger: {
-    //     trigger: ".course-item-1",
-    //     onEnter: () => {
-    //       console.log("entered slide 1");
-    //       setTimeout(function () {
-    //         jQuery(".course-item-2").show();
-    //       }, 1000);
-    // jQuery(window).mouseenter(function () {
-    //   scrollLock = true;
-    // });
-    // jQuery(".gsap-menu-container").css("overflow", "hidden");
-    // setTimeout(function () {
-    //   jQuery(".gsap-menu-container").css("overflow", "");
-    // }, 500);
-    // },
-    // },
-    // scrollTrigger: ".course-item-1",
-    // onEnter: () => console.log("entered slide 1"),
-    // });
+    // Slider 3 Observation
 
-    // gsap.to(".course-item-2", {
-    //   scrollTrigger: {
-    //     trigger: ".course-item-2",
-    //     onEnter: () => {
-    //       console.log("entered slide 2");
-    //     },
-    //   },
-    //   // scrollTrigger: ".course-item-2",
-    //   // onEnter: () => console.log("entered slide 2"),
-    // });
+    const targetNode_3 = document.getElementById("ss-item-3");
+    const config_3 = { attributes: true, childList: true, subtree: true };
+    const callback_3 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-3").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-3").css("animation-name", "bg-fade");
+            jQuery("#path-3").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-3").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-3").css("display", "block");
+                jQuery("#course-item-3").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_3 = new MutationObserver(callback_3);
+    observer_3.observe(targetNode_3, config_3);
 
-    // gsap.to(".course-item-3", {
-    //   scrollTrigger: {
-    //     trigger: ".course-item-3",
-    //     onEnter: () => console.log("entered slide 3"),
-    //   },
-    // });
+    // Slider 4 Observation
+
+    const targetNode_4 = document.getElementById("ss-item-4");
+    const config_4 = { attributes: true, childList: true, subtree: true };
+    const callback_4 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-4").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-4").css("animation-name", "bg-fade");
+            jQuery("#path-4").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-4").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-4").css("display", "block");
+                jQuery("#course-item-4").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_4 = new MutationObserver(callback_4);
+    observer_4.observe(targetNode_4, config_4);
+
+    // Slider 5 Observation
+
+    const targetNode_5 = document.getElementById("ss-item-5");
+    const config_5 = { attributes: true, childList: true, subtree: true };
+    const callback_5 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-5").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-5").css("animation-name", "bg-fade");
+            jQuery("#path-5").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-5").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-5").css("display", "block");
+                jQuery("#course-item-5").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_5 = new MutationObserver(callback_5);
+    observer_5.observe(targetNode_5, config_5);
+
+    // Slider 6 Observation
+
+    const targetNode_6 = document.getElementById("ss-item-6");
+    const config_6 = { attributes: true, childList: true, subtree: true };
+    const callback_6 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-6").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-6").css("animation-name", "bg-fade");
+            jQuery("#path-6").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-6").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-6").css("display", "block");
+                jQuery("#course-item-6").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_6 = new MutationObserver(callback_6);
+    observer_6.observe(targetNode_6, config_6);
+
+    // Slider 7 Observation
+
+    const targetNode_7 = document.getElementById("ss-item-7");
+    const config_7 = { attributes: true, childList: true, subtree: true };
+    const callback_7 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-item-7").hasClass("swiper-slide-active")) {
+            jQuery("#number-container-7").css("animation-name", "bg-fade");
+            jQuery("#path-7").css("animation-name", "dash");
+            observer.disconnect();
+            console.log("disconnect observer");
+            jQuery("#path-7").bind(
+              "oanimationend animationend webkitAnimationEnd",
+              function () {
+                // jQuery(".menu-media").css("animation-name", "fade-in");
+                jQuery("#menu-media-7").css("display", "block");
+                jQuery("#course-item-7").css("display", "flex");
+              }
+            );
+          } else {
+          }
+        }
+      }
+    };
+    const observer_7 = new MutationObserver(callback_7);
+    observer_7.observe(targetNode_7, config_7);
   } else {
     console.log("Not Menu Page");
   }
@@ -173,44 +363,10 @@ var swiper = new Swiper(".mySwiper", {
   direction: "vertical",
   slidesPerView: 1,
   spaceBetween: 0,
-  speed: 2000,
+  speed: 1000,
   mousewheel: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
 });
-
-// svg animation
-
-jQuery("#path-1").bind(
-  "oanimationend animationend webkitAnimationEnd",
-  function () {
-    // jQuery(".menu-media").css("animation-name", "fade-in");
-    jQuery(".menu-media").css("display", "block");
-    jQuery(".course-item-1").css("display", "flex");
-  }
-);
-
-// svg swpier_js animation play on view
-
-jQuery(document).ready(function () {
-  function checkForChanges() {
-    if (jQuery("#ss-item-1").hasClass("swiper-slide-active")) {
-      jQuery("#path-1").css("animation-name", "dash");
-      jQuery("#path-1").finish();
-      // svg finish animation on click
-      jQuery("#ss-item-1").on("click", function () {
-        jQuery("#path-1").finish();
-        console.log("finished");
-      });
-      console.log("test");
-    } else {
-    }
-    setTimeout(checkForChanges, 500);
-  }
-
-  jQuery(checkForChanges);
-});
-
-// https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver

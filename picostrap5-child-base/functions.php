@@ -9,10 +9,10 @@ function picostrap_get_base_css_filename() { return "bundle.css"; }
 add_filter( 'wp_is_application_passwords_available', '__return_false' );
 
 // CDN for GSAP
-wp_register_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', null, null, true );
-wp_enqueue_script('gsap');
-wp_register_script( 'gsap_scroll_trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js', null, null, true );
-wp_enqueue_script('gsap_scroll_trigger');
+// wp_register_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js', null, null, true );
+// wp_enqueue_script('gsap');
+// wp_register_script( 'gsap_scroll_trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js', null, null, true );
+// wp_enqueue_script('gsap_scroll_trigger');
 
 // LOAD CHILD THEME TEXTDOMAIN
 //add_action( 'after_setup_theme', function() { load_child_theme_textdomain( 'picostrap-child', get_stylesheet_directory() . '/languages' ); } );
@@ -45,14 +45,14 @@ add_action("wp_head",function(){ ?>
 
 // --------------------------------------------------------------
 
-//--------------------- rig solid font------------------------
+//--------------------- Fredericka the Great', cursive;------------------------
 
 add_action("wp_head",function(){ ?> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
    <?php }); 
-   
+     
 //    font-family: 'Fredericka the Great', cursive;
    
    // --------------------------------------------------------------
@@ -73,6 +73,17 @@ function custom_get_availability( $availability, $_product ) {
 
   return $availability;
 }
+
+// WooCommerce custom checkout
+
+function md_custom_woocommerce_checkout_fields( $fields ) 
+    {
+        $fields['order']['order_comments']['placeholder'] = 'Order Notes';
+        $fields['order']['order_comments']['label'] = 'Please note any dietary restrictions, allergies, or other requests';
+    
+        return $fields;
+    }
+    add_filter( 'woocommerce_checkout_fields', 'md_custom_woocommerce_checkout_fields' );
 
 // ------------------------------
 // -----------swiperjs-----------

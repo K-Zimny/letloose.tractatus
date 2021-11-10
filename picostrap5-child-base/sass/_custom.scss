@@ -34,16 +34,45 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   position: relative;
-  cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-cur.png"),
-    auto;
+  // cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-cur.png"),
+  //   auto;
+  // background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}
+
+body.woocommerce-page {
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
-  cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-pointer.png")
-      0 100,
-    pointer !important;
+  // cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-pointer.png")
+  //     0 100,
+  //   pointer !important;
+}
+
+.d-desktop-only {
+  display: block;
+}
+
+.d-mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .d-desktop-only {
+    display: none;
+  }
+
+  .d-mobile-only {
+    display: block;
+  }
 }
 
 #lc-interface {
@@ -154,10 +183,13 @@ li {
     font-size: 35px !important;
   }
 
-  h2,
+  h2 {
+    font-size: 38px !important;
+  }
+
   .event-date p,
   .contact-page .event-date p {
-    font-size: 38px !important;
+    font-size: 30px !important;
   }
 
   h3 {
@@ -231,45 +263,115 @@ figure {
 }
 
 #menuBtn a {
-  font-size: 75px !important;
-  backdrop-filter: contrast(10) invert(1);
-  -webkit-backdrop-filter: contrast(10) invert(1);
+  font-size: 200px !important;
+  // backdrop-filter: contrast(10) invert(1);
+  // -webkit-backdrop-filter: contrast(10) invert(1);
   padding-left: 30px !important;
   padding-right: 30px !important;
-  border: 1px solid var(--bs-secondary);
+  // border: 1px solid var(--bs-secondary);
   border-radius: 10px;
-  background: #393939d6;
+  // background: #393939d6;
+  transition: all ease 0.3s;
+  background-color: var(--bs-secondary);
+  color: var(--bs-dark) !important;
+  border: 3px solid var(--bs-dark);
 }
 
 #reservationBtn a {
-  font-size: 38px !important;
-  backdrop-filter: contrast(10) invert(1);
-  -webkit-backdrop-filter: contrast(10) invert(1);
+  font-size: 100px !important;
+  // backdrop-filter: contrast(10) invert(1);
+  // -webkit-backdrop-filter: contrast(10) invert(1);
   padding-left: 30px !important;
   padding-right: 30px !important;
-  border: 1px solid var(--bs-secondary);
+  // border: 1px solid var(--bs-secondary);
   border-radius: 10px;
-  background: #393939d6;
+  // background: #393939d6;
   letter-spacing: 0px;
+  transition: all ease 0.3s;
+  background-color: var(--bs-secondary);
+  color: var(--bs-dark) !important;
+  border: 3px solid var(--bs-dark);
 }
 
-@media only screen and (min-width: 768px) {
+#menuBtn a:hover,
+#menuBtn a:active,
+#menuBtn a:focus,
+#reservationBtn a:hover,
+#reservationBtna:active,
+#reservationBtn a:focus {
+  transform: scale(1.05);
+  // background-color: var(--bs-dark);
+  color: var(--bs-secondary) !important;
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: var(--bs-secondary);
+}
+
+#team a,
+#pastEvents a,
+#contact a {
+  transition: all ease 0.3s;
+  border: 2px solid #fff;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  background-color: var(--bs-dark);
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#team a:hover,
+#pastEvents a:hover,
+#contact a:hover,
+#team a:active,
+#pastEvents a:active,
+#contact a:active,
+#team a:focus,
+#pastEvents a:focus,
+#contact a:focus {
+  transform: scale(1.05);
+  background: var(--bs-secondary);
+  color: var(--bs-dark) !important;
+  border: 2px solid var(--bs-dark);
+}
+
+#eventDate p {
+  display: inline-block;
+  background: var(--bs-dark);
+  border: 2px solid #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0;
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#eventDate p {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  #menuBtn a {
+    font-size: 120px !important;
+  }
+
+  #reservationBtn a {
+    font-size: 75px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   #menuBtn a {
     font-size: 75px !important;
   }
 
   #reservationBtn a {
-    font-size: 55px !important;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  #menuBtn a {
-    // font-size: 120px !important;
-  }
-
-  #reservationBtn a {
-    // font-size: 75px !important;
+    font-size: 40px !important;
   }
 }
 
@@ -349,7 +451,7 @@ nav .navbar-brand figure {
 }
 
 nav .navbar-brand img {
-  height: 90px;
+  height: 150px;
 }
 
 .navbar-light .navbar-toggler {
@@ -364,13 +466,13 @@ nav .navbar-brand img {
     margin: 0;
   }
   nav .navbar-brand img {
-    height: 50px;
+    height: 200px;
   }
 }
 
 @media only screen and (max-width: 349px) {
   nav .navbar-brand img {
-    height: 30px;
+    height: 150px;
   }
 }
 
@@ -387,14 +489,63 @@ footer .footer-container {
   padding: 20px 0;
 }
 
+footer .footer-container > figure img {
+  height: 100%;
+  max-width: 150px;
+}
+
+footer .footer-container > figure {
+  width: 15%;
+}
+
 footer .footer-social-container {
+  width: 15%;
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 footer .footer-social-container a {
-  font-size: 30px;
+  font-size: 50px !important;
   margin: 10px;
+}
+
+// Tractatus Footer
+
+footer .tractatus-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 20px;
+}
+
+footer .tractatus-footer figure {
+  width: 70px;
+  margin-left: 10px;
+}
+
+footer .tractatus-footer p,
+footer .tractatus-footer a {
+  font-size: 16px !important;
+  letter-spacing: 5px;
+}
+
+// Footer submenu
+
+footer .footer-submenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+footer .footer-submenu p,
+footer .footer-submenu a {
+  font-size: 14px !important;
+  letter-spacing: 0px;
+  margin: 0 10px;
+  padding-bottom: 20px;
 }
 
 //---------- Logo styles ----------
@@ -438,6 +589,57 @@ footer .footer-social-container a {
   // opacity: 0.5;
 }
 
+@media only screen and (max-width: 767px) {
+  #homepageKnife {
+    transform: rotate(90deg);
+    width: 100vh;
+    height: 100vh;
+    max-width: none;
+  }
+
+  #homepageKnife img,
+  #homepageKnife svg,
+  #homepageKnife video {
+    width: 100vh;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #homepageKnife img,
+  #homepageKnife svg,
+  #homepageKnife video {
+    object-fit: contain;
+    transform: scale(1.05, 1.5) translate(0, 15%);
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  #homepageKnife {
+    transform: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    inset: 0;
+    // animation: rotate-3d 20s 0.5s infinite;
+    // -webkit-animation-delay: 0.5s;
+    // -webkit-animation-name: rotate-3d;
+    // -webkit-animation-duration: 30s;
+    // -webkit-animation-iteration-count: infinite;
+  }
+
+  #homepageKnife img,
+  #homepageKnife svg,
+  #homepageKnife video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+    // opacity: 0.5;
+  }
+}
 @keyframes rotate-3d {
   0% {
     transform: rotate3d(1, 1, 1, 0deg);
@@ -543,7 +745,7 @@ footer .footer-social-container a {
 
   #eventDate {
     // order: 1;
-    z-index: 9;
+    z-index: 19;
   }
   #reservationBtn {
     // order: 2;
@@ -576,13 +778,13 @@ footer .footer-social-container a {
 
   #homepageHeader h1 {
     // width: 50%;
-    text-align: left;
+    // text-align: left;
     // transform: translateY(-100px);
   }
 
   #menuBtn {
     // margin-top: -400px !important;
-    text-align: left !important;
+    // text-align: left !important;
   }
 }
 
@@ -595,13 +797,17 @@ footer .footer-social-container a {
     // transform: translateY(100px);
   }
 
-  #homepageHeaderH1 h1 {
-    // width: 100%;
-    // margin-left: auto;
-    // margin-right: auto;
-    text-align: center;
-    // transform: translateY(100px);
-  }
+  // #homepageHeaderH1 h1 {
+  //   // width: 100%;
+  //   // margin-left: auto;
+  //   // margin-right: auto;
+  //   text-align: center;
+  //   display: inline-block;
+  //   padding: 15px;
+  //   background-color: var(--bs-dark);
+  //   border: 2px solid #fff;
+  //   // transform: translateY(100px);
+  // }
 
   #menuBtn {
     // margin-top: -500px !important;
@@ -620,7 +826,7 @@ footer .footer-social-container a {
 
 @media only screen and (min-width: 1300px) {
   #menuBtn a {
-    transform: translateX(-400px);
+    // transform: translateX(-400px);
   }
   #menuBtn {
     // margin-top: -500px !important;
@@ -638,6 +844,22 @@ footer .footer-social-container a {
   #homepageKnife {
     height: 100%;
   }
+}
+
+#homepageHeaderH1 h1 {
+  // width: 100%;
+  // margin-left: auto;
+  // margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  padding: 15px;
+  background-color: var(--bs-dark);
+  border: 2px solid #fff;
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // transform: translateY(100px);
 }
 
 // --------------------------------------------------------------------
@@ -661,6 +883,14 @@ footer .footer-social-container a {
 
 // ----- menu header + footer
 
+#ss-header,
+#ss-footer {
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .course-item-header {
   justify-content: center;
 }
@@ -672,7 +902,7 @@ footer .footer-social-container a {
 }
 
 .course-item-footer {
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 // ----- menu items
@@ -688,15 +918,32 @@ footer .footer-social-container a {
   margin-top: 10px;
 }
 
+// .menu-description-list {
+//   display: inline-block;
+//   background: var(--bs-secondary);
+//   padding: 20px;
+// }
+
 .menu-description-list p {
+  color: var(--bs-dark);
   font-size: 30px !important;
   letter-spacing: 10px;
+  display: table;
+  background: var(--bs-secondary);
+  padding: 0 15px;
+}
+
+#bite-menu-item p {
+  font-size: 30px !important;
 }
 
 @media only screen and (max-width: 767px) {
   .menu-description-list p {
     font-size: 22px !important;
     letter-spacing: 5px;
+  }
+  #bite-menu-item p {
+    font-size: 22px !important;
   }
 }
 
@@ -759,9 +1006,193 @@ footer .footer-social-container a {
   object-fit: cover;
 }
 
-.swiper-pagination-progressbar-fill {
-  color: red;
-  background-color: green;
+.swiper-pagination-bullet {
+  background-color: #fff !important;
+  opacity: 0.85 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--bs-secondary) !important;
+}
+
+// ----- menu animations
+
+.number-container svg {
+  width: 100%;
+  height: 50%;
+  transform: translateY(50%);
+  position: absolute;
+}
+
+#path-1,
+#path-2,
+#path-3,
+#path-4,
+#path-5,
+#path-6,
+#path-7 {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  /*animation: dash 10s ease-in;*/
+  animation-duration: 4s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  z-index: 999999;
+}
+
+#number-container-1,
+#number-container-2,
+#number-container-3,
+#number-container-4,
+#number-container-5,
+#number-container-6,
+#number-container-7 {
+  /*animation: bg-fade 10s linear;*/
+  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  animation-duration: 7.5s;
+  visibility: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.number-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+#menu-media-1,
+#menu-media-2,
+#menu-media-3,
+#menu-media-4,
+#menu-media-5,
+#menu-media-6,
+#menu-media-7 {
+  animation-name: fade-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in;
+  display: none;
+}
+
+#course-item-1,
+#course-item-2,
+#course-item-3,
+#course-item-4,
+#course-item-5,
+#course-item-6,
+#course-item-7 {
+  animation-name: fade-in-delay;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-delay {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-fade {
+  from {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1;
+    fill: transparent;
+    opacity: 0;
+  }
+
+  5% {
+    fill: transparent;
+  }
+
+  25% {
+    fill: transparent;
+    opacity: 1;
+  }
+
+  60% {
+    fill: #fff;
+  }
+
+  75% {
+    fill: #fff;
+    opacity: 1;
+  }
+
+  90% {
+    fill: #fff;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    fill: #fff;
+    opacity: 0;
+  }
+}
+
+// ----- menu swiper footer
+
+.course-item-footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-item-footer .row div {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+}
+
+.course-item-footer .row .lc-block {
+  margin-top: auto;
+}
+
+#menu-rtn-top {
+  position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  #menu-rtn-top {
+    order: 1;
+  }
 }
 
 // --------------------------------------------------------------------
@@ -859,6 +1290,10 @@ footer .footer-social-container a {
 // --------------------------------------------------------------------
 // Team Page Style
 // --------------------------------------------------------------------
+
+.team-page {
+  overflow: hidden;
+}
 
 .team-page h1 {
   font-size: 70px !important;
@@ -995,6 +1430,12 @@ footer .footer-social-container a {
   letter-spacing: normal;
 }
 
+#woocommerce-wrapper .single_variation_wrap p,
+#woocommerce-wrapper table.variations {
+  font-size: 18px !important;
+  letter-spacing: normal;
+}
+
 #woocommerce-wrapper .woocommerce-Price-amount.amount bdi {
   font-size: 30px !important;
   letter-spacing: normal;
@@ -1119,6 +1560,10 @@ footer .footer-social-container a {
   color: #fff;
 }
 
+.woocommerce-checkout-payment span {
+  color: #000 !important;
+}
+
 .woocommerce-checkout input,
 .woocommerce-checkout textarea,
 .form-control:focus,
@@ -1136,4 +1581,84 @@ footer .footer-social-container a {
   font-size: 16px !important;
   letter-spacing: 0;
   color: #000;
+}
+
+.woocommerce #order_comments_field label {
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.woocommerce .woocommerce-input-wrapper #order_comments {
+  height: 50vh;
+}
+
+// Checkout Complete page
+
+.woocommerce .woocommerce-order-overview li,
+.woocommerce .woocommerce-order-overview li span {
+  color: #fff;
+}
+
+.woocommerce-checkout span {
+  color: #fff;
+}
+
+// --------------------------------------------------------------------
+// Past Events
+// --------------------------------------------------------------------
+
+#llPastEvents p {
+  font-size: 32px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  #llPastEvents p {
+    font-size: 18px !important;
+  }
+}
+
+// --------------------------------------------------------------------
+// Modal Window
+// --------------------------------------------------------------------
+
+.modal {
+  top: 30vh;
+  color: black;
+}
+
+// --------------------------------------------------------------------
+// Policy Pages
+// --------------------------------------------------------------------
+
+#privacyPolicy h1,
+#termsAndConditions h1 {
+  font-size: 32px !important;
+  text-decoration: underline;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+#privacyPolicy h2,
+#termsAndConditions h2 {
+  font-size: 22px !important;
+  text-decoration: underline;
+  letter-spacing: 0;
+}
+
+#privacyPolicy h3,
+#termsAndConditions h3,
+#termsAndConditions h3 strong {
+  font-size: 20px !important;
+  text-decoration: underline;
+  letter-spacing: 0;
+}
+
+#privacyPolicy p,
+#termsAndConditions p,
+#privacyPolicy a,
+#termsAndConditions a,
+#privacyPolicy li,
+#termsAndConditions li {
+  font-size: 18px !important;
+  letter-spacing: 0;
 }

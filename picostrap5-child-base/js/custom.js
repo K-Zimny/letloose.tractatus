@@ -12,13 +12,33 @@ jQuery(document).ready(function () {
   // ============================================================================================================================================================== */
   // jQuery screen fade in effect
   //  ============================================================================================================================================================== */
-
+  if (jQuery(location).attr("href") !== "https://www.letloosechicago.com/") {
+    var firstSessionToken = "false";
+    sessionStorage.setItem("firstSessionTokenKey", firstSessionToken);
+    console.log(firstSessionToken);
+  }
   if (
     jQuery(location).attr("href") !==
     "https://www.letloosechicago.com/?lc_action_launch_editing=1"
   ) {
-    if ((x = 1)) {
+    var firstSessionTokenHomepage = sessionStorage.getItem(
+      "firstSessionTokenKey"
+    );
+    console.log(firstSessionTokenHomepage);
+    if (
+      firstSessionTokenHomepage !== "false" ||
+      firstSessionTokenHomepage == "null"
+    ) {
       if (jQuery(location).attr("pathname") == "/") {
+        jQuery("#homepageVideoBgFilter").css(
+          "animation-name",
+          "homepage-video-opacity"
+        );
+        jQuery("#homepageLogoAnimation").css(
+          "animation-name",
+          "homepage-logo-animation"
+        );
+
         setTimeout(function () {
           // setTimeout(function () {
           jQuery("#homepage").animate(
@@ -56,8 +76,29 @@ jQuery(document).ready(function () {
           jQuery("#homepageHeaderH1Animation").css("opacity", "1");
         }
       );
+    } else {
+      jQuery("#onloadBlankScreen").bind(
+        "oanimationend animationend webkitAnimationEnd",
+        function () {
+          // jQuery(".menu-media").css("animation-name", "fade-in");
+          jQuery("#onloadBlankScreen").css("display", "none");
+          jQuery("#homepage").animate(
+            {
+              opacity: 1,
+              // height: "toggle",
+            },
+            1000
+          );
+          jQuery("nav").animate(
+            {
+              opacity: 1,
+              // height: "toggle",
+            },
+            1000
+          );
+        }
+      );
     }
-  } else {
   }
 
   // jQuery(".footer-container").animate(

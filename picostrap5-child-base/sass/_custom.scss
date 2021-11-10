@@ -34,6 +34,8 @@ html {
 }
 
 body {
+  // opacity: 0;
+  // display: none;
   // overflow-x: hidden;
   position: relative;
   // cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-cur.png"),
@@ -42,6 +44,150 @@ body {
   // background-position: center;
   // background-repeat: no-repeat;
   // background-size: cover;
+}
+
+#homepage,
+nav
+// ,
+// .footer-container
+// ,
+// footer
+{
+  opacity: 0;
+  // opacity: 1;
+  // display: none;
+}
+
+#onloadBlankScreen {
+  position: absolute;
+  content: "";
+  opacity: 1;
+  background: #121212;
+  z-index: 99999;
+  animation-name: onload-blank-screen;
+  animation-duration: 2.75s;
+  // animation-duration: 5s;
+
+  animation-delay: 0.25s;
+  transition-timing-function: ease-in;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+@keyframes onload-blank-screen {
+  from {
+    left: 0%;
+    right: 0%;
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  to {
+    left: 50%;
+    right: 50%;
+    opacity: 0;
+  }
+  // from {
+  //   top: 0%;
+  //   bottom: 0%;
+  // }
+
+  // 85% {
+  //   opacity: 1;
+  // }
+
+  // to {
+  //   top: 100%;
+  //   // bottom: 100%;
+  //   opacity: 0;
+  // }
+}
+
+#homepageVideoBgFilter {
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  background: var(--bs-dark);
+  animation-name: homepage-video-opacity;
+  animation-duration: 8.5s;
+  animation-delay: 3s;
+}
+
+@keyframes homepage-video-opacity {
+  from {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#homepageLogoAnimation {
+  animation-duration: 6s;
+  animation-delay: 3.5s;
+  // opacity: 1;
+  opacity: 0;
+  animation-name: homepage-logo-animation;
+  // position: absolute;
+  // inset: 0;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  position: absolute;
+  // top: 50%;
+  top: 0%;
+  left: 0;
+  right: 0;
+  transform: translateY(40%);
+}
+
+@keyframes homepage-logo-animation {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#homepageHeaderH1Animation {
+  animation-duration: 5s;
+  animation-delay: 5s;
+  // opacity: 1;
+  opacity: 0;
+  animation-name: homepage-logo-animation-tagline;
+}
+
+@keyframes homepage-logo-animation-tagline {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 body.woocommerce-page {
@@ -806,7 +952,8 @@ footer .footer-submenu a {
 }
 
 @media only screen and (min-width: 1200px) {
-  #homepageHeaderH1 {
+  #homepageHeaderH1,
+  #homepageHeaderH1Animation {
     width: 100%;
     // margin-left: auto;
     // margin-right: auto;
@@ -863,7 +1010,8 @@ footer .footer-submenu a {
   }
 }
 
-#homepageHeaderH1 h1 {
+#homepageHeaderH1 h1,
+#homepageHeaderH1Animation p {
   // width: 100%;
   // margin-left: auto;
   // margin-right: auto;

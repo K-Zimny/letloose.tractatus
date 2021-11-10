@@ -9,6 +9,73 @@ console.log("Custom js file loaded");
 jQuery(document).ready(function () {
   console.log("ready!");
 
+  // ============================================================================================================================================================== */
+  // jQuery screen fade in effect
+  //  ============================================================================================================================================================== */
+
+  if (
+    jQuery(location).attr("href") !==
+    "https://www.letloosechicago.com/?lc_action_launch_editing=1"
+  ) {
+    if ((x = 1)) {
+      if (jQuery(location).attr("pathname") == "/") {
+        setTimeout(function () {
+          // setTimeout(function () {
+          jQuery("#homepage").animate(
+            {
+              opacity: 1,
+              // height: "toggle",
+            },
+            1000
+          );
+          // }, 3500);
+
+          jQuery("nav").animate(
+            {
+              opacity: 1,
+              // height: "toggle",
+            },
+            1000
+          );
+        }, 8500);
+      } else {
+        jQuery("#homepage").css("opacity", "1");
+        jQuery("nav").css("opacity", "1");
+      }
+      jQuery("#onloadBlankScreen").bind(
+        "oanimationend animationend webkitAnimationEnd",
+        function () {
+          // jQuery(".menu-media").css("animation-name", "fade-in");
+          jQuery("#onloadBlankScreen").css("display", "none");
+        }
+      );
+      jQuery("#homepageHeaderH1Animation").bind(
+        "oanimationend animationend webkitAnimationEnd",
+        function () {
+          // jQuery(".menu-media").css("animation-name", "fade-in");
+          jQuery("#homepageHeaderH1Animation").css("opacity", "1");
+        }
+      );
+    }
+  } else {
+  }
+
+  // jQuery(".footer-container").animate(
+  //   {
+  //     opacity: 1,
+  //     // height: "toggle",
+  //   },
+  //   5000
+  // );
+
+  // jQuery("footer").animate(
+  //   {
+  //     opacity: 1,
+  //     height: "toggle",
+  //   },
+  //   5000
+  // );
+
   // --------------------------------------------------------------------
   // Homepage Page
   // --------------------------------------------------------------------
@@ -20,43 +87,6 @@ jQuery(document).ready(function () {
       jQuery("footer").css("background", "#121212");
       jQuery("body").addClass("chalk-bg");
       jQuery("body").css("overflow", "hidden");
-
-      // scroll direction
-
-      if (jQuery(window).width() <= 768) {
-        // let oldValue = 0;
-        // let newValue = 0;
-        // window.addEventListener("scroll", (e) => {
-        //   newValue = window.pageYOffset;
-        //   if (oldValue < newValue) {
-        //     console.log("Down");
-        //     jQuery("#homepageBgVideo").css("left", "+=1%");
-        //   } else if (oldValue > newValue) {
-        //     console.log("Up");
-        //     jQuery("#homepageBgVideo").css("left", "-=1%");
-        //   }
-        //   oldValue = newValue;
-        // });
-        // Initial state
-        // var scrollPos = 0;
-        // // adding scroll event
-        // // Initial state
-        // var scrollPos = 0;
-        // // adding scroll event
-        // window.addEventListener("scroll", function () {
-        //   // detects new state and compares it with the new one
-        //   if (document.body.getBoundingClientRect().top > scrollPos) {
-        //     console.log("scroll move up");
-        //     jQuery("#homepageBgVideo").css("left", "-=.5%");
-        //     this.alert("test");
-        //   } else {
-        //     console.log("scroll move down");
-        //     jQuery("#homepageBgVideo").css("left", "+=.5%");
-        //   }
-        //   // saves the new position for iteration.
-        //   scrollPos = document.body.getBoundingClientRect().top;
-        // });
-      }
     }
 
     // --------------------------------------------------------------------

@@ -18,6 +18,45 @@ jQuery(document).ready(function () {
 
     if (jQuery(location).attr("pathname") == "/") {
       jQuery("footer").css("background", "#121212");
+      jQuery("body").addClass("chalk-bg");
+      jQuery("body").css("overflow", "hidden");
+
+      // scroll direction
+
+      if (jQuery(window).width() <= 768) {
+        // let oldValue = 0;
+        // let newValue = 0;
+        // window.addEventListener("scroll", (e) => {
+        //   newValue = window.pageYOffset;
+        //   if (oldValue < newValue) {
+        //     console.log("Down");
+        //     jQuery("#homepageBgVideo").css("left", "+=1%");
+        //   } else if (oldValue > newValue) {
+        //     console.log("Up");
+        //     jQuery("#homepageBgVideo").css("left", "-=1%");
+        //   }
+        //   oldValue = newValue;
+        // });
+        // Initial state
+        // var scrollPos = 0;
+        // // adding scroll event
+        // // Initial state
+        // var scrollPos = 0;
+        // // adding scroll event
+        // window.addEventListener("scroll", function () {
+        //   // detects new state and compares it with the new one
+        //   if (document.body.getBoundingClientRect().top > scrollPos) {
+        //     console.log("scroll move up");
+        //     jQuery("#homepageBgVideo").css("left", "-=.5%");
+        //     this.alert("test");
+        //   } else {
+        //     console.log("scroll move down");
+        //     jQuery("#homepageBgVideo").css("left", "+=.5%");
+        //   }
+        //   // saves the new position for iteration.
+        //   scrollPos = document.body.getBoundingClientRect().top;
+        // });
+      }
     }
 
     // --------------------------------------------------------------------

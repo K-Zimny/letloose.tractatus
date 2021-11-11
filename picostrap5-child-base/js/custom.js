@@ -10,7 +10,43 @@ jQuery(document).ready(function () {
   console.log("ready!");
 
   // ============================================================================================================================================================== */
-  // jQuery screen fade in effect
+  // Page audio Elements
+  //  ============================================================================================================================================================== */
+  if (
+    jQuery(location).attr("pathname") == "/" ||
+    jQuery(location).attr("pathname") == "/menu/"
+  ) {
+    jQuery("#pageVolumeElementMute").on("click", function () {
+      console.log("mute clicked");
+      document.getElementById("pageAudioElement").volume = 0.5;
+      document.getElementById("pageAudioElement").play();
+      jQuery("#pageVolumeElementMute").css("display", "none");
+      jQuery("#pageVolumeElementPlay").css("display", "block");
+    });
+    jQuery("#pageVolumeElementPlay").on("click", function () {
+      console.log("play clicked");
+      document.getElementById("pageAudioElement").pause();
+      jQuery("#pageVolumeElementMute").css("display", "block");
+      jQuery("#pageVolumeElementPlay").css("display", "none");
+    });
+  }
+
+  // ============================================================================================================================================================== */
+  // Page animation on load
+  //  ============================================================================================================================================================== */
+  if (jQuery(location).attr("pathname") !== "/") {
+    jQuery("nav").css("opacity", "1");
+    jQuery("#onloadBlankScreen").bind(
+      "oanimationend animationend webkitAnimationEnd",
+      function () {
+        // jQuery(".menu-media").css("animation-name", "fade-in");
+        jQuery("#onloadBlankScreen").css("display", "none");
+      }
+    );
+  }
+
+  // ============================================================================================================================================================== */
+  // Homepage Intro Animation
   //  ============================================================================================================================================================== */
   if (jQuery(location).attr("href") !== "https://www.letloosechicago.com/") {
     var firstSessionToken = "false";
@@ -58,9 +94,16 @@ jQuery(document).ready(function () {
             1000
           );
         }, 8500);
+        jQuery("#homepageLogoAnimation").bind(
+          "oanimationend animationend webkitAnimationEnd",
+          function () {
+            jQuery("#homepageLogoAnimation").css("display", "none");
+          }
+        );
       } else {
         jQuery("#homepage").css("opacity", "1");
         jQuery("nav").css("opacity", "1");
+        jQuery("#homepageLogoAnimation").css("display", "none");
       }
       jQuery("#onloadBlankScreen").bind(
         "oanimationend animationend webkitAnimationEnd",
@@ -80,21 +123,21 @@ jQuery(document).ready(function () {
       jQuery("#onloadBlankScreen").bind(
         "oanimationend animationend webkitAnimationEnd",
         function () {
-          // jQuery(".menu-media").css("animation-name", "fade-in");
+          jQuery("#homepageLogoAnimation").css("display", "none");
           jQuery("#onloadBlankScreen").css("display", "none");
           jQuery("#homepage").animate(
             {
               opacity: 1,
               // height: "toggle",
             },
-            1000
+            500
           );
           jQuery("nav").animate(
             {
               opacity: 1,
               // height: "toggle",
             },
-            1000
+            1500
           );
         }
       );

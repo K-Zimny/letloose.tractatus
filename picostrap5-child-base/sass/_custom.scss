@@ -152,6 +152,7 @@ nav
   left: 0;
   right: 0;
   transform: translateY(40%);
+  z-index: 99;
 }
 
 @keyframes homepage-logo-animation {
@@ -1826,4 +1827,29 @@ footer .footer-submenu a {
 #termsAndConditions li {
   font-size: 18px !important;
   letter-spacing: 0;
+}
+
+// --------------------------------------------------------------------
+// Page Volume Element
+// --------------------------------------------------------------------
+
+#pageAudioElement {
+  display: none;
+}
+
+#pageVolumeElementPlay {
+  position: fixed;
+  bottom: 30px;
+  left: 92%;
+  font-size: 30px;
+  display: none;
+  z-index: 99;
+}
+
+#pageVolumeElementMute {
+  position: fixed;
+  bottom: 30px;
+  left: 92%;
+  font-size: 30px;
+  z-index: 99;
 }

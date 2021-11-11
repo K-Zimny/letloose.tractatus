@@ -10,24 +10,99 @@ jQuery(document).ready(function () {
   console.log("ready!");
 
   // ============================================================================================================================================================== */
+  // Page Experience Panel
+  //  ============================================================================================================================================================== */
+
+  var globalSoundsTokenGet = sessionStorage.getItem("globalSoundsTokenKey");
+
+  if (
+    jQuery(location).attr("pathname") == "/" ||
+    jQuery(location).attr("pathname") == "/menu/"
+  ) {
+    console.log("globalSoundsTokenGet: " + globalSoundsTokenGet);
+    if (globalSoundsTokenGet == "null") {
+      jQuery("#homepageExperiencesPanel").css("display", "none");
+    } else if (
+      globalSoundsTokenGet == "true" ||
+      globalSoundsTokenGet == "false"
+    ) {
+      jQuery("#homepageExperiencesPanel").css("display", "none");
+      if (globalSoundsTokenGet == "true") {
+        document.getElementById("pageAudioElement").play();
+        jQuery("#pageVolumeElementMute").css("display", "none");
+        jQuery("#pageVolumeElementPlay").css("display", "block");
+      } else if (globalSoundsTokenGet == "false") {
+        document.getElementById("pageAudioElement").pause();
+        jQuery("#pageVolumeElementMute").css("display", "block");
+        jQuery("#pageVolumeElementPlay").css("display", "none");
+      } else {
+      }
+    } else {
+      jQuery("#homepageExperiencesPanel").css("display", "block");
+      jQuery("#onloadBlankScreen").css("animation-name", "none");
+      var globalSoundsToken = null;
+      jQuery("#fullExperienceBtn").on("click", function () {
+        //
+        globalSoundsToken = "true";
+        sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+        console.log("globalSoundsToken " + globalSoundsToken);
+
+        document.getElementById("pageAudioElement").play();
+        jQuery("#pageVolumeElementMute").css("display", "none");
+        jQuery("#pageVolumeElementPlay").css("display", "block");
+
+        //
+        console.log("click");
+        jQuery("#homepageExperiencesPanel").css("display", "none");
+        jQuery("#onloadBlankScreen").css(
+          "animation-name",
+          "onload-blank-screen"
+        );
+      });
+      jQuery("#basicExperienceBtn").on("click", function () {
+        //
+        globalSoundsToken = "false";
+        sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+        console.log("globalSoundsToken " + globalSoundsToken);
+
+        document.getElementById("pageAudioElement").pause();
+        jQuery("#pageVolumeElementMute").css("display", "block");
+        jQuery("#pageVolumeElementPlay").css("display", "none");
+
+        //
+        console.log("click");
+        jQuery("#homepageExperiencesPanel").css("display", "none");
+        jQuery("#onloadBlankScreen").css(
+          "animation-name",
+          "onload-blank-screen"
+        );
+      });
+    }
+  }
+
+  // ============================================================================================================================================================== */
   // Page audio Elements
   //  ============================================================================================================================================================== */
   if (
     jQuery(location).attr("pathname") == "/" ||
     jQuery(location).attr("pathname") == "/menu/"
   ) {
+    document.getElementById("pageAudioElement").volume = 0.5;
     jQuery("#pageVolumeElementMute").on("click", function () {
       console.log("mute clicked");
-      document.getElementById("pageAudioElement").volume = 0.5;
       document.getElementById("pageAudioElement").play();
       jQuery("#pageVolumeElementMute").css("display", "none");
       jQuery("#pageVolumeElementPlay").css("display", "block");
+      globalSoundsToken = "true";
+      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
     });
     jQuery("#pageVolumeElementPlay").on("click", function () {
       console.log("play clicked");
       document.getElementById("pageAudioElement").pause();
       jQuery("#pageVolumeElementMute").css("display", "block");
       jQuery("#pageVolumeElementPlay").css("display", "none");
+      globalSoundsToken = "false";
+      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
     });
   }
 
@@ -36,6 +111,7 @@ jQuery(document).ready(function () {
   //  ============================================================================================================================================================== */
   if (jQuery(location).attr("pathname") !== "/") {
     jQuery("nav").css("opacity", "1");
+    jQuery("#onloadBlankScreen").css("animation-name", "onload-blank-screen");
     jQuery("#onloadBlankScreen").bind(
       "oanimationend animationend webkitAnimationEnd",
       function () {

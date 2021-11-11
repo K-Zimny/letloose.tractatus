@@ -13,7 +13,7 @@ jQuery(document).ready(function () {
   // Page Experience Panel
   //  ============================================================================================================================================================== */
 
-  var globalSoundsTokenGet = sessionStorage.getItem("globalSoundsTokenKey");
+  var globalSoundsTokenGet = localStorage.getItem("globalSoundsTokenKey");
 
   if (
     jQuery(location).attr("pathname") == "/" ||
@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
       jQuery("#fullExperienceBtn").on("click", function () {
         //
         globalSoundsToken = "true";
-        sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+        localStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
         console.log("globalSoundsToken " + globalSoundsToken);
 
         document.getElementById("pageAudioElement").play();
@@ -62,7 +62,7 @@ jQuery(document).ready(function () {
       jQuery("#basicExperienceBtn").on("click", function () {
         //
         globalSoundsToken = "false";
-        sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+        localStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
         console.log("globalSoundsToken " + globalSoundsToken);
 
         document.getElementById("pageAudioElement").pause();
@@ -94,7 +94,7 @@ jQuery(document).ready(function () {
       jQuery("#pageVolumeElementMute").css("display", "none");
       jQuery("#pageVolumeElementPlay").css("display", "block");
       globalSoundsToken = "true";
-      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+      localStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
     });
     jQuery("#pageVolumeElementPlay").on("click", function () {
       console.log("play clicked");
@@ -102,7 +102,7 @@ jQuery(document).ready(function () {
       jQuery("#pageVolumeElementMute").css("display", "block");
       jQuery("#pageVolumeElementPlay").css("display", "none");
       globalSoundsToken = "false";
-      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+      localStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
     });
   }
 

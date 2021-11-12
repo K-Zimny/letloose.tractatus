@@ -40,7 +40,7 @@ body {
   position: relative;
   // cursor: url("https://letloose.tractatusdesign.studio/wp-content/uploads/2021/10/knife-cur.png"),
   //   auto;
-  // background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  // background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   // background-position: center;
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -182,7 +182,7 @@ nav
 }
 
 body.woocommerce-page {
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   // background-position: center;
   // background-repeat: no-repeat;
   background-size: cover;
@@ -426,26 +426,37 @@ figure {
   // background: #393939d6;
   letter-spacing: 0px;
   transition: all ease 0.3s;
-  background-color: var(--bs-secondary);
-  color: var(--bs-dark) !important;
-  border: 3px solid var(--bs-dark);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  color: var(--bs-secondary) !important;
+  border: 3px solid var(--bs-secondary);
   box-shadow: 0px 0px 10px var(--bs-secondary);
 }
 
 #menuBtn a:hover,
 #menuBtn a:active,
-#menuBtn a:focus,
+#menuBtn a:focus {
+  transform: scale(1.05);
+  // background-color: var(--bs-dark);
+  color: var(--bs-secondary) !important;
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: var(--bs-secondary);
+  box-shadow: 0px 0px 100px var(--bs-secondary);
+}
+
 #reservationBtn a:hover,
 #reservationBtn a:active,
 #reservationBtn a:focus {
   transform: scale(1.05);
   // background-color: var(--bs-dark);
-  color: var(--bs-secondary) !important;
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  color: var(--bs-dark) !important;
+  background: var(--bs-secondary);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-color: var(--bs-secondary);
+  border-color: var(--bs-dark);
   box-shadow: 0px 0px 100px var(--bs-secondary);
 }
 
@@ -457,7 +468,7 @@ figure {
   padding-left: 20px !important;
   padding-right: 20px !important;
   background-color: var(--bs-dark);
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -486,14 +497,19 @@ figure {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 0;
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#eventDate p {
-  margin-bottom: 0;
+// #eventDate p {
+//   margin-bottom: 0;
+// }
+
+#eventDate i {
+  font-style: normal;
+  color: var(--bs-secondary);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -700,7 +716,7 @@ footer .footer-submenu a {
 //---------- bg class styles ----------
 
 .chalk-bg {
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1015,7 +1031,7 @@ footer .footer-submenu a {
   padding: 15px;
   background-color: var(--bs-dark);
   border: 2px solid #fff;
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1045,7 +1061,7 @@ footer .footer-submenu a {
 
 #ss-header,
 #ss-footer {
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1208,7 +1224,7 @@ footer .footer-submenu a {
 #number-container-6,
 #number-container-7 {
   /*animation: bg-fade 10s linear;*/
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   animation-duration: 7.5s;
   visibility: hidden;
   background-position: center;
@@ -1871,9 +1887,9 @@ footer .footer-submenu a {
   left: 0%;
   right: 0%;
   flex-flow: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
-  // height: 100vh;
+  min-height: 100vh;
   padding-top: 3rem;
 }
 
@@ -1924,7 +1940,7 @@ footer .footer-submenu a {
   // background: #393939d6;
   letter-spacing: 10px;
   transition: all ease 0.3s;
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
 
   // background-color: var(--bs-secondary);
   border: 3px solid #fff;
@@ -1936,7 +1952,7 @@ footer .footer-submenu a {
   transform: scale(1.05);
   // background-color: var(--bs-dark);
   color: var(--bs-secondary) !important;
-  background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1950,7 +1966,7 @@ footer .footer-submenu a {
   transform: scale(1.05);
   // background-color: var(--bs-dark);
   color: var(--bs-dark) !important;
-  // background: url(https://letloose.tractatusdesign.studio/wp-content/uploads/2021/11/chalk-bg.jpg);
+  // background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   // background-position: center;
   // background-repeat: no-repeat;
   // background-size: cover;

@@ -19,7 +19,8 @@ jQuery(document).ready(function () {
     jQuery(location).attr("pathname") == "/" ||
     jQuery(location).attr("pathname") == "/menu/"
   ) {
-    jQuery("html").css("overflow-y", "hidden");
+    // jQuery("header").css("display", "none");
+    // jQuery("#homepage").css("display", "none");
     console.log("globalSoundsTokenGet: " + globalSoundsTokenGet);
     if (globalSoundsTokenGet == "null") {
       jQuery("#homepageExperiencesPanel").css("display", "none");
@@ -38,11 +39,25 @@ jQuery(document).ready(function () {
       } else {
       }
     } else {
-      jQuery("#homepageExperiencesPanel").css("display", "none");
+      jQuery("header").css("display", "none");
+      jQuery("footer").css("display", "none");
+      jQuery("#homepage").css("display", "none");
+      // jQuery("#homepageExperiencesPanel").css("display", "none");
       jQuery("#homepageExperiencesPanel").css("display", "flex");
       jQuery("#onloadBlankScreen").css("animation-name", "none");
       var globalSoundsToken = null;
       jQuery("#fullExperienceBtn").on("click", function () {
+        jQuery("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          500
+        );
+        setTimeout(function () {
+          jQuery("html").css("overflow-y", "hidden");
+        }),
+          2500;
+        jQuery("#homepage").css("display", "block");
         //
         globalSoundsToken = "true";
         sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
@@ -62,6 +77,8 @@ jQuery(document).ready(function () {
         );
         setTimeout(function () {
           jQuery("#homepageExperiencesPanel").css("display", "none");
+          jQuery("header").css("display", "block");
+          jQuery("footer").css("display", "block");
         }, 1000);
         jQuery("#onloadBlankScreen").css("animation-delay", "1.5s");
         jQuery("#onloadBlankScreen").css(
@@ -69,7 +86,21 @@ jQuery(document).ready(function () {
           "onload-blank-screen"
         );
       });
+
+      //
+
       jQuery("#basicExperienceBtn").on("click", function () {
+        jQuery("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          500
+        );
+        setTimeout(function () {
+          jQuery("html").css("overflow-y", "hidden");
+        }),
+          2500;
+        jQuery("#homepage").css("display", "block");
         //
         globalSoundsToken = "false";
         sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
@@ -89,6 +120,8 @@ jQuery(document).ready(function () {
         );
         setTimeout(function () {
           jQuery("#homepageExperiencesPanel").css("display", "none");
+          jQuery("header").css("display", "block");
+          jQuery("footer").css("display", "block");
         }, 1000);
         jQuery("#onloadBlankScreen").css(
           "animation-name",
@@ -122,7 +155,7 @@ jQuery(document).ready(function () {
   }
 
   if (jQuery(location).attr("pathname") == "/menu/") {
-    document.getElementById("pageAudioElement").volume = 0.2;
+    document.getElementById("pageAudioElement").volume = 0.1;
     jQuery("#pageVolumeElementMute").on("click", function () {
       console.log("mute clicked");
       document.getElementById("pageAudioElement").play();
@@ -296,6 +329,7 @@ jQuery(document).ready(function () {
           // );
         });
       } else {
+        jQuery("#homepage").css("display", "block");
         jQuery("#homepage").css("opacity", "1");
         jQuery("nav").css("opacity", "1");
         jQuery("#homepageLogoAnimation").css("display", "none");
@@ -319,6 +353,7 @@ jQuery(document).ready(function () {
     //   console.log("test");
     // }
     else {
+      jQuery("#homepage").css("display", "block");
       jQuery("#onloadBlankScreen").bind(
         "oanimationend animationend webkitAnimationEnd",
         function () {

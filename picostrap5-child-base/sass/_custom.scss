@@ -68,7 +68,9 @@ nav
   animation-duration: 2.75s;
   // animation-duration: 5s;
 
-  animation-delay: 0.25s;
+  // animation-delay: 0.25s;
+  animation-delay: 1s;
+
   transition-timing-function: ease-in;
   top: 0%;
   bottom: 0%;
@@ -122,8 +124,10 @@ nav
 }
 
 #homepageLogoAnimation {
-  animation-duration: 6s;
-  animation-delay: 3.5s;
+  animation-duration: 5s;
+  // animation-delay: 3.5s;
+  animation-delay: 4.5s;
+
   // opacity: 1;
   opacity: 0;
   // animation-name: homepage-logo-animation;
@@ -162,7 +166,7 @@ nav
   animation-delay: 5s;
   // opacity: 1;
   opacity: 0;
-  animation-name: homepage-logo-animation-tagline;
+  // animation-name: homepage-logo-animation-tagline;
 }
 
 @keyframes homepage-logo-animation-tagline {
@@ -1831,18 +1835,19 @@ footer .footer-submenu a {
 
 #pageVolumeElementPlay {
   position: fixed;
-  bottom: 30px;
-  left: 92%;
-  font-size: 30px;
+  bottom: 50px;
+  right: 30px;
+  font-size: 20px;
   display: none;
   z-index: 99;
 }
 
 #pageVolumeElementMute {
   position: fixed;
-  bottom: 30px;
-  left: 92%;
-  font-size: 30px;
+  bottom: 50px;
+  right: 30px;
+  font-size: 20px;
+  display: none;
   z-index: 99;
 }
 

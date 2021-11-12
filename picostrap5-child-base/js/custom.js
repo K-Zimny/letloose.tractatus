@@ -54,7 +54,16 @@ jQuery(document).ready(function () {
 
         //
         console.log("click");
-        jQuery("#homepageExperiencesPanel").css("display", "none");
+        jQuery("#homepageExperiencesPanel").animate(
+          {
+            opacity: 0,
+          },
+          1000
+        );
+        setTimeout(function () {
+          jQuery("#homepageExperiencesPanel").css("display", "none");
+        }, 1000);
+        jQuery("#onloadBlankScreen").css("animation-delay", "1.5s");
         jQuery("#onloadBlankScreen").css(
           "animation-name",
           "onload-blank-screen"
@@ -72,7 +81,15 @@ jQuery(document).ready(function () {
 
         //
         console.log("click");
-        jQuery("#homepageExperiencesPanel").css("display", "none");
+        jQuery("#homepageExperiencesPanel").animate(
+          {
+            opacity: 0,
+          },
+          1000
+        );
+        setTimeout(function () {
+          jQuery("#homepageExperiencesPanel").css("display", "none");
+        }, 1000);
         jQuery("#onloadBlankScreen").css(
           "animation-name",
           "onload-blank-screen"
@@ -84,11 +101,28 @@ jQuery(document).ready(function () {
   // ============================================================================================================================================================== */
   // Page audio Elements
   //  ============================================================================================================================================================== */
-  if (
-    jQuery(location).attr("pathname") == "/" ||
-    jQuery(location).attr("pathname") == "/menu/"
-  ) {
+  if (jQuery(location).attr("pathname") == "/") {
     document.getElementById("pageAudioElement").volume = 0.5;
+    jQuery("#pageVolumeElementMute").on("click", function () {
+      console.log("mute clicked");
+      document.getElementById("pageAudioElement").play();
+      jQuery("#pageVolumeElementMute").css("display", "none");
+      jQuery("#pageVolumeElementPlay").css("display", "block");
+      globalSoundsToken = "true";
+      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+    });
+    jQuery("#pageVolumeElementPlay").on("click", function () {
+      console.log("play clicked");
+      document.getElementById("pageAudioElement").pause();
+      jQuery("#pageVolumeElementMute").css("display", "block");
+      jQuery("#pageVolumeElementPlay").css("display", "none");
+      globalSoundsToken = "false";
+      sessionStorage.setItem("globalSoundsTokenKey", globalSoundsToken);
+    });
+  }
+
+  if (jQuery(location).attr("pathname") == "/menu/") {
+    document.getElementById("pageAudioElement").volume = 0.2;
     jQuery("#pageVolumeElementMute").on("click", function () {
       console.log("mute clicked");
       document.getElementById("pageAudioElement").play();
@@ -141,11 +175,11 @@ jQuery(document).ready(function () {
   // ============================================================================================================================================================== */
   // Homepage Intro Animation
   //  ============================================================================================================================================================== */
-  if (jQuery(location).attr("href") !== "https://www.letloosechicago.com/") {
-    var firstSessionToken = "false";
-    sessionStorage.setItem("firstSessionTokenKey", firstSessionToken);
-    console.log(firstSessionToken);
-  }
+  // if (jQuery(location).attr("href") !== "https://www.letloosechicago.com/") {
+  //   var firstSessionToken = "false";
+  //   sessionStorage.setItem("firstSessionTokenKey", firstSessionToken);
+  //   console.log(firstSessionToken);
+  // }
   if (
     jQuery(location).attr("href") !==
     "https://www.letloosechicago.com/?lc_action_launch_editing=1"
@@ -153,13 +187,18 @@ jQuery(document).ready(function () {
     var firstSessionTokenHomepage = sessionStorage.getItem(
       "firstSessionTokenKey"
     );
-    console.log(firstSessionTokenHomepage);
+    console.log("firstSessionTokenHomepage: " + firstSessionTokenHomepage);
     if (
-      firstSessionTokenHomepage !== "false" ||
-      firstSessionTokenHomepage == "null"
+      // firstSessionTokenHomepage !== "false" ||
+      firstSessionTokenHomepage == null
     ) {
       if (jQuery(location).attr("pathname") == "/") {
         jQuery("#fullExperienceBtn").on("click", function () {
+          var firstSessionToken = "true";
+          sessionStorage.setItem("firstSessionTokenKey", firstSessionToken);
+          console.log(
+            "firstSessionTokenHomepage after choice: " + firstSessionToken
+          );
           jQuery("#homepageVideoBgFilter").css(
             "animation-name",
             "homepage-video-opacity"
@@ -168,9 +207,16 @@ jQuery(document).ready(function () {
             "animation-name",
             "homepage-logo-animation"
           );
-
+          jQuery("#homepageHeaderH1Animation").css(
+            "animation-name",
+            "homepage-logo-animation-tagline"
+          );
+          jQuery("#homepage").css("visibility", "hidden");
+          jQuery("nav").css("visibility", "hidden");
           setTimeout(function () {
             // setTimeout(function () {
+            jQuery("#homepage").css("visibility", "visible");
+            jQuery("nav").css("visibility", "visible");
             jQuery("#homepage").animate(
               {
                 opacity: 1,
@@ -187,16 +233,23 @@ jQuery(document).ready(function () {
               },
               1000
             );
-          }, 8500);
-          jQuery("#homepageLogoAnimation").bind(
-            "oanimationend animationend webkitAnimationEnd",
-            function () {
-              jQuery("#homepageLogoAnimation").css("display", "none");
-              jQuery("html").css("overflow-y", "visible");
-            }
-          );
+            jQuery("#homepageLogoAnimation").css("display", "none");
+            jQuery("html").css("overflow-y", "visible");
+          }, 9500);
+          // jQuery("#homepageLogoAnimation").bind(
+          //   "oanimationend animationend webkitAnimationEnd",
+          //   function () {
+          //     // jQuery("#homepageLogoAnimation").css("display", "none");
+          //     jQuery("html").css("overflow-y", "visible");
+          //   }
+          // );
         });
         jQuery("#basicExperienceBtn").on("click", function () {
+          var firstSessionToken = "true";
+          sessionStorage.setItem("firstSessionTokenKey", firstSessionToken);
+          console.log(
+            "firstSessionTokenHomepage after choice: " + firstSessionToken
+          );
           jQuery("#homepageVideoBgFilter").css(
             "animation-name",
             "homepage-video-opacity"
@@ -205,9 +258,16 @@ jQuery(document).ready(function () {
             "animation-name",
             "homepage-logo-animation"
           );
-
+          jQuery("#homepageHeaderH1Animation").css(
+            "animation-name",
+            "homepage-logo-animation-tagline"
+          );
+          jQuery("#homepage").css("visibility", "hidden");
+          jQuery("nav").css("visibility", "hidden");
           setTimeout(function () {
             // setTimeout(function () {
+            jQuery("#homepage").css("visibility", "visible");
+            jQuery("nav").css("visibility", "visible");
             jQuery("#homepage").animate(
               {
                 opacity: 1,
@@ -224,14 +284,16 @@ jQuery(document).ready(function () {
               },
               1000
             );
-          }, 8500);
-          jQuery("#homepageLogoAnimation").bind(
-            "oanimationend animationend webkitAnimationEnd",
-            function () {
-              jQuery("#homepageLogoAnimation").css("display", "none");
-              jQuery("html").css("overflow-y", "visible");
-            }
-          );
+            jQuery("#homepageLogoAnimation").css("display", "none");
+            jQuery("html").css("overflow-y", "visible");
+          }, 9500);
+          // jQuery("#homepageLogoAnimation").bind(
+          //   "oanimationend animationend webkitAnimationEnd",
+          //   function () {
+          //     jQuery("#homepageLogoAnimation").css("display", "none");
+          //     jQuery("html").css("overflow-y", "visible");
+          //   }
+          // );
         });
       } else {
         jQuery("#homepage").css("opacity", "1");
@@ -252,7 +314,11 @@ jQuery(document).ready(function () {
           jQuery("#homepageHeaderH1Animation").css("opacity", "1");
         }
       );
-    } else {
+    }
+    // else if (firstSessionTokenHomepage == "true") {
+    //   console.log("test");
+    // }
+    else {
       jQuery("#onloadBlankScreen").bind(
         "oanimationend animationend webkitAnimationEnd",
         function () {
@@ -270,7 +336,7 @@ jQuery(document).ready(function () {
               opacity: 1,
               // height: "toggle",
             },
-            1500
+            500
           );
           jQuery("html").css("overflow-y", "visible");
         }
@@ -656,4 +722,7 @@ var swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  // autoplay: {
+  //   delay: 10000,
+  // },
 });

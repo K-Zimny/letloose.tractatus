@@ -40,7 +40,7 @@ jQuery(document).ready(function () {
       }
     } else {
       jQuery("header").css("display", "none");
-      jQuery("footer").css("display", "none");
+      jQuery("#siteFooter").css("display", "none");
       jQuery("#homepage").css("display", "none");
       // jQuery("#homepageExperiencesPanel").css("display", "none");
       jQuery("#homepageExperiencesPanel").css("display", "flex");
@@ -78,7 +78,7 @@ jQuery(document).ready(function () {
         setTimeout(function () {
           jQuery("#homepageExperiencesPanel").css("display", "none");
           jQuery("header").css("display", "block");
-          jQuery("footer").css("display", "block");
+          jQuery("#siteFooter").css("display", "block");
         }, 1000);
         jQuery("#onloadBlankScreen").css("animation-delay", "1.5s");
         jQuery("#onloadBlankScreen").css(
@@ -121,7 +121,7 @@ jQuery(document).ready(function () {
         setTimeout(function () {
           jQuery("#homepageExperiencesPanel").css("display", "none");
           jQuery("header").css("display", "block");
-          jQuery("footer").css("display", "block");
+          jQuery("#siteFooter").css("display", "block");
         }, 1000);
         jQuery("#onloadBlankScreen").css(
           "animation-name",
@@ -195,6 +195,7 @@ jQuery(document).ready(function () {
   //  ============================================================================================================================================================== */
   if (jQuery(location).attr("pathname") !== "/") {
     jQuery("nav").css("opacity", "1");
+    jQuery("#siteFooter").css("opacity", "1");
     jQuery("#onloadBlankScreen").css("animation-name", "onload-blank-screen");
     jQuery("#onloadBlankScreen").bind(
       "oanimationend animationend webkitAnimationEnd",
@@ -203,6 +204,14 @@ jQuery(document).ready(function () {
         jQuery("#onloadBlankScreen").css("display", "none");
       }
     );
+  }
+
+  // ============================================================================================================================================================== */
+  // footer display on non open sllider pages
+  //  ============================================================================================================================================================== */
+
+  if (jQuery(location).attr("pathname") == "/") {
+    jQuery("#siteFooter").css("opacity", "0");
   }
 
   // ============================================================================================================================================================== */
@@ -246,10 +255,13 @@ jQuery(document).ready(function () {
           );
           jQuery("#homepage").css("visibility", "hidden");
           jQuery("nav").css("visibility", "hidden");
+          jQuery("#siteFooter").css("visibility", "hidden");
           setTimeout(function () {
             // setTimeout(function () {
             jQuery("#homepage").css("visibility", "visible");
             jQuery("nav").css("visibility", "visible");
+            jQuery("#siteFooter").css("visibility", "visible");
+            jQuery("#siteFooter").css("opacity", "0");
             jQuery("#homepage").animate(
               {
                 opacity: 1,
@@ -260,6 +272,14 @@ jQuery(document).ready(function () {
             // }, 3500);
 
             jQuery("nav").animate(
+              {
+                opacity: 1,
+                // height: "toggle",
+              },
+              1000
+            );
+
+            jQuery("#siteFooter").animate(
               {
                 opacity: 1,
                 // height: "toggle",
@@ -297,10 +317,13 @@ jQuery(document).ready(function () {
           );
           jQuery("#homepage").css("visibility", "hidden");
           jQuery("nav").css("visibility", "hidden");
+          jQuery("#siteFooter").css("visibility", "hidden");
           setTimeout(function () {
             // setTimeout(function () {
             jQuery("#homepage").css("visibility", "visible");
             jQuery("nav").css("visibility", "visible");
+            jQuery("#siteFooter").css("visibility", "visible");
+            jQuery("#siteFooter").css("opacity", "0");
             jQuery("#homepage").animate(
               {
                 opacity: 1,
@@ -311,6 +334,13 @@ jQuery(document).ready(function () {
             // }, 3500);
 
             jQuery("nav").animate(
+              {
+                opacity: 1,
+                // height: "toggle",
+              },
+              1000
+            );
+            jQuery("#siteFooter").animate(
               {
                 opacity: 1,
                 // height: "toggle",
@@ -332,6 +362,7 @@ jQuery(document).ready(function () {
         jQuery("#homepage").css("display", "block");
         jQuery("#homepage").css("opacity", "1");
         jQuery("nav").css("opacity", "1");
+        // jQuery("#siteFooter").css("opacity", "1");
         jQuery("#homepageLogoAnimation").css("display", "none");
       }
       jQuery("#onloadBlankScreen").bind(
@@ -354,6 +385,8 @@ jQuery(document).ready(function () {
     // }
     else {
       jQuery("#homepage").css("display", "block");
+      // jQuery("#siteFooter").css("opacity", "0");
+      console.log("footer hidden 1");
       jQuery("#onloadBlankScreen").bind(
         "oanimationend animationend webkitAnimationEnd",
         function () {
@@ -367,6 +400,13 @@ jQuery(document).ready(function () {
             500
           );
           jQuery("nav").animate(
+            {
+              opacity: 1,
+              // height: "toggle",
+            },
+            500
+          );
+          jQuery("#siteFooter").animate(
             {
               opacity: 1,
               // height: "toggle",
@@ -403,7 +443,7 @@ jQuery(document).ready(function () {
     console.log("Page is NOT a livecanvas Editor");
 
     if (jQuery(location).attr("pathname") == "/") {
-      jQuery("footer").css("background", "#121212");
+      jQuery("#siteFooter").css("background", "#121212");
       jQuery("body").addClass("chalk-bg");
       jQuery("body").css("overflow", "hidden");
     }
@@ -419,8 +459,17 @@ jQuery(document).ready(function () {
 
     if (jQuery(window).width() >= 1320) {
       jQuery("#eventDate").insertAfter(".navbar-brand");
+      jQuery("nav > .container").css("justify-content", "space-between");
     } else {
       jQuery("#eventDate").insertBefore("#homepageHeader");
+      jQuery("nav > .container").css("justify-content", "center");
+    }
+
+    if (jQuery(window).width() >= 1320 && jQuery(window).width() <= 1600) {
+      jQuery("#eventDate").addClass("nav-event-font");
+      console.log("true");
+    } else {
+      jQuery("#eventDate").removeClass("nav-event-font");
     }
 
     jQuery(window).on("resize", function () {
@@ -428,6 +477,13 @@ jQuery(document).ready(function () {
         jQuery("#eventDate").insertAfter(".navbar-brand");
       } else {
         jQuery("#eventDate").insertBefore("#homepageHeader");
+      }
+
+      if (jQuery(window).width() >= 1320 && jQuery(window).width() <= 1600) {
+        jQuery("#eventDate").addClass("nav-event-font");
+        console.log("true");
+      } else {
+        jQuery("#eventDate").removeClass("nav-event-font");
       }
     });
   } else {

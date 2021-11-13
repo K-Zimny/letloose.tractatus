@@ -297,7 +297,7 @@ li {
 
   .event-date p,
   .contact-page .event-date p {
-    font-size: 50px !important;
+    font-size: 40px !important;
   }
 
   h3 {
@@ -326,7 +326,7 @@ li {
 
   .event-date p,
   .contact-page .event-date p {
-    font-size: 30px !important;
+    font-size: 25px !important;
   }
 
   h3 {
@@ -397,6 +397,7 @@ figure {
 #homepage .btn {
   padding-left: 0;
   padding-right: 0;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #menuBtn a {
@@ -413,6 +414,7 @@ figure {
   color: var(--bs-dark) !important;
   border: 3px solid var(--bs-dark);
   box-shadow: 0px 0px 30px var(--bs-secondary);
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #reservationBtn a {
@@ -428,16 +430,17 @@ figure {
   transition: all ease 0.3s;
   background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   color: var(--bs-secondary) !important;
-  border: 3px solid var(--bs-secondary);
-  box-shadow: 0px 0px 10px var(--bs-secondary);
+  border: 1px solid var(--bs-secondary);
+  // box-shadow: 0px 0px 10px var(--bs-secondary);
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #menuBtn a:hover,
 #menuBtn a:active,
 #menuBtn a:focus {
-  transform: scale(1.05);
+  transform: scale(1.06);
   // background-color: var(--bs-dark);
-  color: var(--bs-secondary) !important;
+  color: #ffffff !important;
   background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -457,7 +460,8 @@ figure {
   background-repeat: no-repeat;
   background-size: cover;
   border-color: var(--bs-dark);
-  box-shadow: 0px 0px 100px var(--bs-secondary);
+  // border-width: 3px;
+  box-shadow: 0px 0px 50px var(--bs-secondary);
 }
 
 #team a,
@@ -472,6 +476,7 @@ figure {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #team a:hover,
@@ -514,21 +519,22 @@ figure {
 
 @media only screen and (max-width: 1200px) {
   #menuBtn a {
-    font-size: 120px !important;
+    font-size: 150px !important;
   }
 
   #reservationBtn a {
-    font-size: 75px !important;
+    font-size: 50px !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #menuBtn a {
-    font-size: 75px !important;
+    font-size: 85px !important;
   }
 
   #reservationBtn a {
-    font-size: 40px !important;
+    font-size: 30px !important;
+    width: 90%;
   }
 }
 
@@ -603,6 +609,10 @@ nav {
   background-color: transparent;
 }
 
+nav.navbar > .container {
+  justify-content: center;
+}
+
 nav .navbar-brand figure {
   margin: 0;
 }
@@ -613,6 +623,10 @@ nav .navbar-brand img {
 
 .navbar-light .navbar-toggler {
   border-color: transparent;
+}
+
+.nav-event-font p {
+  font-size: 38px !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -659,11 +673,11 @@ footer .footer-social-container {
   width: 15%;
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  align-items: center;
 }
 
 footer .footer-social-container a {
-  font-size: 50px !important;
+  font-size: 35px !important;
   margin: 10px;
 }
 
@@ -703,6 +717,43 @@ footer .footer-submenu a {
   letter-spacing: 0px;
   margin: 0 10px;
   padding-bottom: 20px;
+  display: inline-block;
+}
+
+footer .footer-submenu > div {
+  width: 33%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1199px) {
+  footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-container > figure {
+    width: 100%;
+  }
+
+  footer .footer-container > figure img {
+    margin: 0 auto;
+  }
+
+  footer .footer-social-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  footer .footer-social-container a {
+    margin: 20px 20px 10px;
+  }
+
+  footer .tractatus-footer-container {
+    order: 3;
+  }
+}
+
+@media only screen and (max-width: 767px) {
 }
 
 //---------- Logo styles ----------
@@ -725,7 +776,7 @@ footer .footer-submenu a {
 //---------- Homepage styles ----------
 
 #homepageHeader {
-  min-height: 70vh;
+  // min-height: 70vh;
 }
 
 #homepageHeader h1 {
@@ -1849,22 +1900,33 @@ footer .footer-submenu a {
   display: none;
 }
 
-#pageVolumeElementPlay {
-  position: fixed;
-  bottom: 50px;
-  right: 30px;
-  font-size: 20px;
-  display: none;
-  z-index: 99;
-}
-
+#pageVolumeElementPlay,
 #pageVolumeElementMute {
   position: fixed;
-  bottom: 50px;
-  right: 30px;
-  font-size: 20px;
+  bottom: 15px;
+  right: 15px;
+  font-size: 15px;
   display: none;
-  z-index: 99;
+  z-index: 100;
+  transition: all ease 0.3s;
+}
+
+#pageVolumeElementPlay:hover,
+#pageVolumeElementMute:hover {
+  transform: scale(1.05);
+}
+
+#pageVolumeElementPlay {
+  color: var(--bs-secondary);
+}
+
+@media only screen and (max-width: 1199px) {
+  #pageVolumeElementPlay,
+  #pageVolumeElementMute {
+    bottom: 15px;
+    right: 15px;
+    font-size: 15px;
+  }
 }
 
 // --------------------------------------------------------------------

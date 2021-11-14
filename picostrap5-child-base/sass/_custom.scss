@@ -553,7 +553,7 @@ figure {
 
   #reservationBtn a {
     font-size: 30px !important;
-    width: 90%;
+    width: auto !important;
   }
 }
 
@@ -564,7 +564,7 @@ figure {
 
   #reservationBtn a {
     font-size: 25px !important;
-    width: 90%;
+    width: 90% !important;
   }
 
   .event-date p,
@@ -785,6 +785,15 @@ footer .footer-submenu a {
 footer .footer-submenu > div {
   width: 33%;
   text-align: center;
+}
+
+// Footer submenu copyright
+
+footer .footer-submenu-cr p {
+  font-size: 12px !important;
+  letter-spacing: 2.5px;
+  margin: 0 10px;
+  padding-bottom: 20px;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1684,7 +1693,7 @@ footer .footer-submenu > div {
 .contact-page p,
 #contact-address {
   font-size: 26px !important;
-  line-height: 35px;
+  // line-height: 35px;
   letter-spacing: normal;
 }
 
@@ -1717,10 +1726,24 @@ footer .footer-submenu > div {
 
 .contact-socials svg,
 .contact-socials figure {
-  width: 3em;
-  height: 3em;
+  // width: 3em;
+  // height: 3em;
   margin: 1em;
   color: var(--bs-secondary);
+}
+
+.contact-socials a,
+.contact-socials figure {
+  transition: all ease 0.3s;
+}
+
+.contact-socials a:hover,
+.contact-socials a:active,
+.contact-socials a:focus,
+.contact-socials figure:hover,
+.contact-socials figure:active,
+.contact-socials figure:focus {
+  transform: scale(1.05);
 }
 
 .contact-page video {
@@ -1731,7 +1754,7 @@ footer .footer-submenu > div {
 
 .contact-page #contact-info {
   position: sticky;
-  top: 0px;
+  top: 30px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1768,6 +1791,7 @@ footer .footer-submenu > div {
 #aboutHeader h1 {
   font-size: 70px !important;
   text-align: center;
+  color: #000 !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1907,6 +1931,17 @@ footer .footer-submenu > div {
 .woocommerce a {
   font-size: 16px !important;
   letter-spacing: 0;
+}
+
+.woocommerce small,
+.woocommerce .small,
+.woocommerce #woocommerce-wrapper small a,
+.woocommerce .small a {
+  font-size: 1.1rem !important;
+}
+
+.woocommerce #woocommerce-wrapper small a {
+  text-decoration: underline !important;
 }
 // --------------------------------------------------------------------
 // WooCommerce Product Page
@@ -2360,5 +2395,41 @@ footer .footer-submenu > div {
 
   #experiencePanelNotice p {
     font-size: 12px !important;
+  }
+}
+
+// --------------------------------------------------------------------
+// Homepage experiences panel
+// --------------------------------------------------------------------
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  html {
+    overflow-y: hidden !important;
+    margin: 0 !important;
+  }
+
+  body {
+    display: none;
+  }
+
+  html::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    height: 100vh;
+    background-color: var(--bs-dark);
+    // position: relative;
+    z-index: 9;
+  }
+  html::after {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    content: "For best user experience, please view Let Loose in portrait. Thank you.";
+    height: 100%;
+    z-index: 99;
+    font-family: "Karla";
   }
 }

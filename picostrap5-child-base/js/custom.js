@@ -475,8 +475,10 @@ jQuery(document).ready(function () {
     jQuery(window).on("resize", function () {
       if (jQuery(window).width() >= 1320) {
         jQuery("#eventDate").insertAfter(".navbar-brand");
+        jQuery("nav > .container").css("justify-content", "space-between");
       } else {
         jQuery("#eventDate").insertBefore("#homepageHeader");
+        jQuery("nav > .container").css("justify-content", "center");
       }
 
       if (jQuery(window).width() >= 1320 && jQuery(window).width() <= 1600) {
@@ -792,8 +794,33 @@ if (jQuery(location).attr("href") !== "about:srcdoc") {
         }
       }
     };
+
     const observer_7 = new MutationObserver(callback_7);
     observer_7.observe(targetNode_7, config_7);
+
+    // Slider footer Observation
+
+    const targetNode_8 = document.getElementById("ss-footer");
+    const config_8 = { attributes: true, childList: true, subtree: true };
+    const callback_8 = function (mutationsList, observer) {
+      for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+          console.log("A child node has been added or removed.");
+        } else if (mutation.type === "attributes") {
+          console.log(
+            "The " + mutation.attributeName + " attribute was modified."
+          );
+          if (jQuery("#ss-footer").hasClass("swiper-slide-active")) {
+            observer.disconnect();
+            console.log("disconnect observer footer");
+          } else {
+          }
+        }
+      }
+    };
+
+    const observer_8 = new MutationObserver(callback_8);
+    observer_8.observe(targetNode_8, config_8);
   } else {
     console.log("Not Menu Page");
   }
@@ -812,6 +839,10 @@ var swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
   // autoplay: {
   //   delay: 10000,

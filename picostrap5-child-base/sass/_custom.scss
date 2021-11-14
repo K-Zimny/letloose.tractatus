@@ -1179,6 +1179,11 @@ footer .footer-submenu-cr p {
 // Menu Page Style
 // --------------------------------------------------------------------
 
+.page-id-134 nav,
+.page-id-134 footer {
+  display: none;
+}
+
 .gsap-menu-container {
   max-height: 100vh;
   // overflow-y: scroll;

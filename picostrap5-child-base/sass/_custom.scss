@@ -434,7 +434,7 @@ figure {
   // background: #393939d6;
   letter-spacing: 5px;
   transition: all ease 0.3s;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   color: var(--bs-secondary) !important;
   border: 1px solid var(--bs-secondary);
   // box-shadow: 0px 0px 10px var(--bs-secondary);
@@ -478,7 +478,7 @@ figure {
   padding-left: 20px !important;
   padding-right: 20px !important;
   background-color: var(--bs-dark);
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -508,7 +508,7 @@ figure {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 0;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2303,7 +2303,7 @@ footer .footer-submenu-cr p {
   // background: #393939d6;
   letter-spacing: 10px;
   transition: all ease 0.3s;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
 
   // background-color: var(--bs-secondary);
   border: 3px solid #fff;
@@ -2399,37 +2399,37 @@ footer .footer-submenu-cr p {
 }
 
 // --------------------------------------------------------------------
-// Homepage experiences panel
+// horizontal hide
 // --------------------------------------------------------------------
 
-@media screen and (max-width: 900px) and (orientation: landscape) {
-  html {
-    overflow-y: hidden !important;
-    margin: 0 !important;
-  }
+// @media screen and (max-width: 900px) and (orientation: landscape) {
+//   html {
+//     overflow-y: hidden !important;
+//     margin: 0 !important;
+//   }
 
-  body {
-    display: none;
-  }
+//   body {
+//     display: none;
+//   }
 
-  html::before {
-    position: absolute;
-    inset: 0;
-    content: "";
-    height: 100vh;
-    background-color: var(--bs-dark);
-    // position: relative;
-    z-index: 9;
-  }
-  html::after {
-    position: absolute;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    content: "For best user experience, please view Let Loose in portrait. Thank you.";
-    height: 100%;
-    z-index: 99;
-    font-family: "Karla";
-  }
-}
+//   html::before {
+//     position: absolute;
+//     inset: 0;
+//     content: "";
+//     height: 100vh;
+//     background-color: var(--bs-dark);
+//     // position: relative;
+//     z-index: 9;
+//   }
+//   html::after {
+//     position: absolute;
+//     color: #fff;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, 0%);
+//     content: "For best user experience, please view Let Loose in portrait. Thank you.";
+//     height: 100%;
+//     z-index: 99;
+//     font-family: "Karla";
+//   }
+// }

@@ -47,12 +47,14 @@ jQuery(document).ready(function () {
       jQuery("#onloadBlankScreen").css("animation-name", "none");
       var globalSoundsToken = null;
       jQuery("#fullExperienceBtn").on("click", function () {
-        jQuery("html, body").animate(
-          {
-            scrollTop: 0,
-          },
-          500
-        );
+        if (jQuery(location).attr("pathname") !== "/menu/") {
+          jQuery("html, body").animate(
+            {
+              scrollTop: 0,
+            },
+            500
+          );
+        }
         setTimeout(function () {
           jQuery("html").css("overflow-y", "hidden");
         }),
@@ -90,12 +92,14 @@ jQuery(document).ready(function () {
       //
 
       jQuery("#basicExperienceBtn").on("click", function () {
-        jQuery("html, body").animate(
-          {
-            scrollTop: 0,
-          },
-          500
-        );
+        if (jQuery(location).attr("pathname") !== "/menu/") {
+          jQuery("html, body").animate(
+            {
+              scrollTop: 0,
+            },
+            500
+          );
+        }
         setTimeout(function () {
           jQuery("html").css("overflow-y", "hidden");
         }),
@@ -129,6 +133,15 @@ jQuery(document).ready(function () {
         );
       });
     }
+  }
+
+  // ============================================================================================================================================================== */
+  // Hide Nav on menu page
+  //  ============================================================================================================================================================== */
+
+  if (jQuery(location).attr("pathname") == "/menu/") {
+    jQuery("nav").css("display", "none");
+    jQuery("footer").css("display", "none");
   }
 
   // ============================================================================================================================================================== */
@@ -196,14 +209,21 @@ jQuery(document).ready(function () {
   if (jQuery(location).attr("pathname") !== "/") {
     jQuery("nav").css("opacity", "1");
     jQuery("#siteFooter").css("opacity", "1");
-    jQuery("#onloadBlankScreen").css("animation-name", "onload-blank-screen");
-    jQuery("#onloadBlankScreen").bind(
-      "oanimationend animationend webkitAnimationEnd",
-      function () {
-        // jQuery(".menu-media").css("animation-name", "fade-in");
-        jQuery("#onloadBlankScreen").css("display", "none");
-      }
-    );
+    if (jQuery(location).attr("pathname") !== "/menu/") {
+      jQuery("#onloadBlankScreen").css("animation-name", "onload-blank-screen");
+      console.log("#207");
+      jQuery("#onloadBlankScreen").bind(
+        "oanimationend animationend webkitAnimationEnd",
+        function () {
+          // jQuery(".menu-media").css("animation-name", "fade-in");
+          jQuery("#onloadBlankScreen").css("display", "none");
+        }
+      );
+    } else if (jQuery(location).attr("pathname") == "/menu/") {
+      jQuery("#onloadBlankScreen").css("animation-name", "none");
+      jQuery("#onloadBlankScreen").css("display", "none");
+      console.log("#215");
+    }
   }
 
   // ============================================================================================================================================================== */
@@ -218,8 +238,8 @@ jQuery(document).ready(function () {
   // Copyright footer
   // --------------------------------------------------------------------
 
-  document.getElementById("copyrightFooterYear").innerHTML =
-    new Date().getFullYear();
+  // document.getElementById("copyrightFooterYear").innerHTML =
+  //   new Date().getFullYear();
 
   // ============================================================================================================================================================== */
   // Homepage Intro Animation
@@ -451,7 +471,7 @@ jQuery(document).ready(function () {
 
     if (jQuery(location).attr("pathname") == "/") {
       jQuery("#siteFooter").css("background", "#121212");
-      jQuery("body").addClass("chalk-bg");
+      // jQuery("body").addClass("chalk-bg");
       jQuery("body").css("overflow", "hidden");
     }
 
@@ -807,27 +827,27 @@ if (jQuery(location).attr("href") !== "about:srcdoc") {
 
     // Slider footer Observation
 
-    const targetNode_8 = document.getElementById("ss-footer");
-    const config_8 = { attributes: true, childList: true, subtree: true };
-    const callback_8 = function (mutationsList, observer) {
-      for (const mutation of mutationsList) {
-        if (mutation.type === "childList") {
-          console.log("A child node has been added or removed.");
-        } else if (mutation.type === "attributes") {
-          console.log(
-            "The " + mutation.attributeName + " attribute was modified."
-          );
-          if (jQuery("#ss-footer").hasClass("swiper-slide-active")) {
-            observer.disconnect();
-            console.log("disconnect observer footer");
-          } else {
-          }
-        }
-      }
-    };
+    // const targetNode_8 = document.getElementById("ss-footer");
+    // const config_8 = { attributes: true, childList: true, subtree: true };
+    // const callback_8 = function (mutationsList, observer) {
+    //   for (const mutation of mutationsList) {
+    //     if (mutation.type === "childList") {
+    //       console.log("A child node has been added or removed.");
+    //     } else if (mutation.type === "attributes") {
+    //       console.log(
+    //         "The " + mutation.attributeName + " attribute was modified."
+    //       );
+    //       if (jQuery("#ss-footer").hasClass("swiper-slide-active")) {
+    //         observer.disconnect();
+    //         console.log("disconnect observer footer");
+    //       } else {
+    //       }
+    //     }
+    //   }
+    // };
 
-    const observer_8 = new MutationObserver(callback_8);
-    observer_8.observe(targetNode_8, config_8);
+    // const observer_8 = new MutationObserver(callback_8);
+    // observer_8.observe(targetNode_8, config_8);
   } else {
     console.log("Not Menu Page");
   }

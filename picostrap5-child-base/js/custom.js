@@ -238,8 +238,8 @@ jQuery(document).ready(function () {
   // Copyright footer
   // --------------------------------------------------------------------
 
-  // document.getElementById("copyrightFooterYear").innerHTML =
-  //   new Date().getFullYear();
+  document.getElementById("copyrightFooterYear").innerHTML =
+    new Date().getFullYear();
 
   // ============================================================================================================================================================== */
   // Homepage Intro Animation

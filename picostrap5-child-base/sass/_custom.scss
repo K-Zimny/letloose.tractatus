@@ -2402,34 +2402,34 @@ footer .footer-submenu-cr p {
 // horizontal hide
 // --------------------------------------------------------------------
 
-// @media screen and (max-width: 900px) and (orientation: landscape) {
-//   html {
-//     overflow-y: hidden !important;
-//     margin: 0 !important;
-//   }
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  html {
+    overflow-y: hidden !important;
+    margin: 0 !important;
+  }
 
-//   body {
-//     display: none;
-//   }
+  body {
+    display: none;
+  }
 
-//   html::before {
-//     position: absolute;
-//     inset: 0;
-//     content: "";
-//     height: 100vh;
-//     background-color: var(--bs-dark);
-//     // position: relative;
-//     z-index: 9;
-//   }
-//   html::after {
-//     position: absolute;
-//     color: #fff;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, 0%);
-//     content: "For best user experience, please view Let Loose in portrait. Thank you.";
-//     height: 100%;
-//     z-index: 99;
-//     font-family: "Karla";
-//   }
-// }
+  html::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    height: 100vh;
+    background-color: var(--bs-dark);
+    // position: relative;
+    z-index: 9;
+  }
+  html::after {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    content: "For best user experience, please view Let Loose in portrait. Thank you.";
+    height: 100%;
+    z-index: 99;
+    font-family: "Karla";
+  }
+}

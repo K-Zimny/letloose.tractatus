@@ -519,6 +519,7 @@ figure {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px;
 }
 
 // #eventDate p {
@@ -1173,6 +1174,24 @@ footer .footer-submenu-cr p {
   background-size: cover;
   // transform: translateY(100px);
   width: auto;
+}
+
+#homepageHeaderH1Animation p {
+  // width: 100%;
+  // margin-left: auto;
+  // margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  padding: 15px;
+  background-color: var(--bs-dark);
+  border: 2px solid #fff;
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // transform: translateY(100px);
+  width: auto;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2264,7 +2283,23 @@ footer .footer-submenu-cr p {
   align-items: center;
   min-height: 100vh;
   padding-top: 3rem;
+  // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  // background-size: 400% 400%;
+  // animation: gradient 15s ease infinite;
+  // height: 100vh;
 }
+
+// @keyframes gradient {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
+// }
 
 #homepageExperiencesPanel figure {
   width: 50vw;
@@ -2440,9 +2475,11 @@ footer .footer-submenu-cr p {
     inset: 0;
     content: "";
     height: 100vh;
-    background-color: var(--bs-dark);
-    // position: relative;
+    // background-color: var(--bs-dark);
+    background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
     z-index: 9;
+    background-position: center;
+    background-size: cover;
   }
   html::after {
     position: absolute;
@@ -2450,10 +2487,13 @@ footer .footer-submenu-cr p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
-    content: "For best user experience, please view Let Loose in portrait. Thank you.";
-    height: 100%;
+    content: "For the best user experience, please view 'Let Loose' in portrait.";
+    height: 100vh;
     z-index: 99;
     font-family: "Karla";
+    width: 100%;
+    padding: 0 20%;
+    // background-color: var(--bs-dark);
   }
 }
 
@@ -2503,5 +2543,40 @@ footer .footer-submenu-cr p {
     z-index: 9999999;
     // visibility: hidden;
     // z-index: -9999999;
+  }
+}
+
+// --------------------------------------------------------------------
+// Woo commerce hide page
+// --------------------------------------------------------------------
+
+// Comment out when ready to show ecommerce page for reservation booking
+
+body.woocommerce::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  height: 100%;
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-size: contain;
+  background-position: center;
+  z-index: 9;
+}
+body.woocommerce::after {
+  position: absolute;
+  color: #fff;
+  top: 40vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  content: "Reservation Booking is not available at this time. Check back with us soon! - The Let Loose Team";
+  height: 100%;
+  z-index: 99;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 45px;
+}
+
+@media only screen and (max-width: 767px) {
+  body.woocommerce::after {
+    font-size: 25px;
   }
 }

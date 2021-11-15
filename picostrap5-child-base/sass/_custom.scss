@@ -1312,9 +1312,15 @@ footer .footer-submenu-cr p {
 
 @media only screen and (max-width: 1199px) {
   .menu-description {
-    padding-bottom: 45px;
+    padding-bottom: 65px;
   }
 }
+
+// @media only screen and (max-width: 1199px) and (min-height: 800px) {
+//   .menu-description {
+//     padding-bottom: 65px;
+//   }
+// }
 
 @media only screen and (max-width: 767px) {
   .course-item-header h1 {

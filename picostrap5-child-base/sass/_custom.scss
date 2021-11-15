@@ -189,9 +189,15 @@ nav
 
 body.woocommerce-page {
   background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background-size: cover;
   // background-position: center;
   // background-repeat: no-repeat;
-  background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+  body.woocommerce-page {
+    background-size: contain;
+  }
 }
 
 a {
@@ -447,7 +453,7 @@ figure {
   transform: scale(1.06);
   // background-color: var(--bs-dark);
   color: #ffffff !important;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1160,7 +1166,7 @@ footer .footer-submenu-cr p {
   padding: 15px;
   background-color: var(--bs-dark);
   border: 2px solid #fff;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  // background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1200,7 +1206,6 @@ footer .footer-submenu-cr p {
 }
 
 // ----- menu header + footer
-
 #ss-header,
 #ss-footer {
   background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
@@ -2295,6 +2300,14 @@ footer .footer-submenu-cr p {
   color: #ffffff7a !important;
 }
 
+#experiencePanelWiFi p {
+  font-family: "Karla";
+  font-size: 24px !important;
+  letter-spacing: 0px;
+  color: #ffffff7a !important;
+  text-align: center;
+}
+
 #basicExperienceBtn {
   font-family: rig-solid-bold-halftone, sans-serif;
   font-size: 30px !important;
@@ -2320,7 +2333,7 @@ footer .footer-submenu-cr p {
   transform: scale(1.05);
   // background-color: var(--bs-dark);
   color: var(--bs-secondary) !important;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2359,6 +2372,10 @@ footer .footer-submenu-cr p {
 
   #experiencePanelRecommended p {
     font-size: 18px !important;
+  }
+
+  #experiencePanelWiFi p {
+    font-size: 14px !important;
   }
 
   #basicExperienceBtn {
@@ -2436,5 +2453,54 @@ footer .footer-submenu-cr p {
     height: 100%;
     z-index: 99;
     font-family: "Karla";
+  }
+}
+
+// --------------------------------------------------------------------
+// cssload animation
+// --------------------------------------------------------------------
+
+.css-load-animation {
+  position: absolute;
+  content: "";
+  background: #121212;
+  // z-index: 99999;
+  animation-name: css-load-animation;
+  animation-duration: 3.25s;
+  // animation-delay: 1s;
+  transition-timing-function: ease-in;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+@keyframes css-load-animation {
+  from {
+    left: 0%;
+    right: 0%;
+    opacity: 1;
+    z-index: 9999999;
+  }
+
+  15% {
+    left: 0%;
+    right: 0%;
+    opacity: 1;
+    z-index: 9999999;
+  }
+
+  85% {
+    opacity: 1;
+    z-index: 9999999;
+  }
+
+  to {
+    left: 50%;
+    right: 50%;
+    opacity: 0;
+    z-index: 9999999;
+    // visibility: hidden;
+    // z-index: -9999999;
   }
 }

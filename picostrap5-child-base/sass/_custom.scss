@@ -1312,7 +1312,7 @@ footer .footer-submenu-cr p {
 
 @media only screen and (max-width: 1199px) {
   .menu-description {
-    padding-bottom: 65px;
+    padding-bottom: 45px;
   }
 }
 
@@ -1399,15 +1399,19 @@ footer .footer-submenu-cr p {
   object-fit: cover;
 }
 
-.swiper-pagination-bullet {
-  background-color: #fff !important;
-  opacity: 0.5 !important;
+.swiper-pagination {
+  display: none;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: var(--bs-secondary) !important;
-  opacity: 0.5 !important;
-}
+// .swiper-pagination-bullet {
+//   background-color: #fff !important;
+//   opacity: 0.5 !important;
+// }
+
+// .swiper-pagination-bullet-active {
+//   background-color: var(--bs-secondary) !important;
+//   opacity: 0.5 !important;
+// }
 
 .swiper-button-home::after {
   font-family: swiper-icons;
@@ -1441,7 +1445,7 @@ footer .footer-submenu-cr p {
   right: 55% !important;
   transform: rotate(180deg) translate(0%, 0%) !important;
   color: var(--bs-secondary) !important;
-  opacity: 0.75 !important;
+  opacity: 0.5 !important;
   transition: all ease 0.3s !important;
 }
 
@@ -1458,7 +1462,7 @@ footer .footer-submenu-cr p {
   right: 51% !important;
   transform: rotate(90deg) translate(0%, 0%) !important;
   color: #fff !important;
-  opacity: 0.75 !important;
+  opacity: 0.5 !important;
   transition: all ease 0.3s !important;
 }
 
@@ -1470,7 +1474,7 @@ footer .footer-submenu-cr p {
   left: 51% !important;
   transform: rotate(90deg) translate(0%, 0%) !important;
   color: #fff !important;
-  opacity: 0.75 !important;
+  opacity: 0.5 !important;
   transition: all ease 0.3s !important;
 }
 
@@ -1496,8 +1500,11 @@ footer .footer-submenu-cr p {
 
 @media only screen and (max-width: 1199px) {
   .swiper-button-home {
-    right: 70% !important;
-    left: 15px !important;
+    // right: 70% !important;
+    // left: 15px !important;
+    // top: 20px !important;
+    right: 28px !important;
+    bottom: 180px !important;
   }
 
   .swiper-button-home::after {
@@ -1511,12 +1518,18 @@ footer .footer-submenu-cr p {
 
   .swiper-button-next,
   .swiper-button-next.swiper-button-disabled {
-    right: 53% !important;
+    right: 26px !important;
+    left: unset !important;
+    // top: 80% !important;
+    bottom: 60px !important;
   }
 
   .swiper-button-prev,
   .swiper-button-prev.swiper-button-disabled {
-    left: 53% !important;
+    left: unset !important;
+    // top: 70% !important;
+    right: 26px !important;
+    bottom: 120px !important;
   }
 }
 
@@ -2243,7 +2256,7 @@ footer .footer-submenu-cr p {
   display: none;
   z-index: 100;
   transition: all ease 0.3s;
-  opacity: 0.75 !important;
+  opacity: 0.5 !important;
   cursor: pointer;
 }
 

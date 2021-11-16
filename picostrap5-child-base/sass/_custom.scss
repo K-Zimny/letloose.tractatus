@@ -338,7 +338,7 @@ li {
 
   .event-date p,
   .contact-page .event-date p {
-    font-size: 30px !important;
+    font-size: 35px !important;
   }
 
   h3 {
@@ -522,9 +522,25 @@ figure {
   border-radius: 5px;
 }
 
-// #eventDate p {
-//   margin-bottom: 0;
-// }
+#eventDate p span {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+#eventDate p {
+  position: relative;
+}
+
+#eventDate p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  background: var(--bs-secondary);
+  width: 80%;
+  transform: translateX(-50%);
+}
 
 #eventDate i {
   font-style: normal;

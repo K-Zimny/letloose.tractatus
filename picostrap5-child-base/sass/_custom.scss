@@ -1259,6 +1259,12 @@ footer .footer-submenu-cr p {
   letter-spacing: 10px;
 }
 
+.course-item-header h2 {
+  font-family: "Fredericka the Great", cursive;
+  letter-spacing: 10px;
+  font-size: 40px !important;
+}
+
 .course-item-header figure {
   transition: all ease 0.3s;
 }
@@ -1330,6 +1336,25 @@ footer .footer-submenu-cr p {
   .menu-description {
     padding-bottom: 45px;
   }
+
+  .course-item-header h1 {
+    font-size: 30px !important;
+    letter-spacing: 5px;
+  }
+
+  .course-item-header h2 {
+    font-family: "Fredericka the Great", cursive;
+    letter-spacing: 5px;
+    font-size: 27px !important;
+  }
+
+  #bite-menu-item p {
+    font-size: 22px !important;
+    letter-spacing: 5px;
+  }
+  #bite-menu-item p:first-of-type {
+    font-size: 25px !important;
+  }
 }
 
 // @media only screen and (max-width: 1199px) and (min-height: 800px) {
@@ -1339,8 +1364,20 @@ footer .footer-submenu-cr p {
 // }
 
 @media only screen and (max-width: 767px) {
+  .course-item-header img {
+    width: 80%;
+    margin-left: -15px;
+  }
+
   .course-item-header h1 {
+    font-size: 25px !important;
     letter-spacing: 5px;
+  }
+
+  .course-item-header h2 {
+    font-family: "Fredericka the Great", cursive;
+    letter-spacing: 5px;
+    font-size: 23px !important;
   }
 
   .menu-description-list p {
@@ -1348,11 +1385,24 @@ footer .footer-submenu-cr p {
     letter-spacing: 5px;
   }
   #bite-menu-item p {
-    font-size: 22px !important;
+    font-size: 20px !important;
     letter-spacing: 5px;
   }
   #bite-menu-item p:first-of-type {
-    font-size: 27px !important;
+    font-size: 23px !important;
+  }
+
+  #bite-menu-item {
+    position: relative;
+  }
+
+  #bite-menu-item::after {
+    position: absolute;
+    content: "";
+    top: -5px;
+    width: 70%;
+    height: 1px;
+    background: var(--bs-secondary);
   }
 }
 

@@ -440,7 +440,8 @@ figure {
   // background: #393939d6;
   letter-spacing: 5px;
   transition: all ease 0.3s;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  // background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+  background: #121212;
   color: var(--bs-secondary) !important;
   border: 1px solid var(--bs-secondary);
   // box-shadow: 0px 0px 10px var(--bs-secondary);
@@ -485,7 +486,7 @@ figure {
   padding-left: 20px !important;
   padding-right: 20px !important;
   background-color: var(--bs-dark);
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -515,7 +516,7 @@ figure {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 0;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1201,7 +1202,7 @@ footer .footer-submenu-cr p {
   padding: 15px;
   background-color: var(--bs-dark);
   border: 2px solid #fff;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1250,6 +1251,19 @@ footer .footer-submenu-cr p {
   background-size: cover;
 }
 
+#bite-menu-item {
+  position: relative;
+}
+
+#bite-menu-item::after {
+  position: absolute;
+  content: "";
+  top: -5px;
+  width: 70%;
+  height: 1px;
+  background: var(--bs-secondary);
+}
+
 .course-item-header {
   justify-content: center;
 }
@@ -1257,12 +1271,13 @@ footer .footer-submenu-cr p {
 .course-item-header h1 {
   font-family: "Fredericka the Great", cursive;
   letter-spacing: 10px;
+  font-size: 37px !important;
 }
 
 .course-item-header h2 {
   font-family: "Fredericka the Great", cursive;
   letter-spacing: 10px;
-  font-size: 40px !important;
+  font-size: 30px !important;
 }
 
 .course-item-header figure {
@@ -1283,7 +1298,7 @@ footer .footer-submenu-cr p {
 
 #bite-menu-item p {
   color: var(--bs-dark);
-  font-size: 30px !important;
+  font-size: 23px !important;
   letter-spacing: 10px;
   display: table;
   background: var(--bs-secondary);
@@ -1295,7 +1310,7 @@ footer .footer-submenu-cr p {
   font-family: "Fredericka the Great", cursive;
   color: #fff;
   padding-left: 0;
-  font-size: 35px !important;
+  font-size: 27px !important;
 }
 
 .course-item-footer {
@@ -1321,15 +1336,20 @@ footer .footer-submenu-cr p {
 
 .menu-description-list p {
   color: var(--bs-dark);
-  font-size: 30px !important;
+  font-size: 23px !important;
   letter-spacing: 10px;
   display: table;
   background: var(--bs-secondary);
   padding: 0 15px;
 }
 
-#bite-menu-item p {
-  font-size: 30px !important;
+// #bite-menu-item p {
+//   font-size: 30px !important;
+// }
+
+.course-item-header img {
+  width: 80% !important;
+  margin-left: -15px;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1364,11 +1384,6 @@ footer .footer-submenu-cr p {
 // }
 
 @media only screen and (max-width: 767px) {
-  .course-item-header img {
-    width: 80%;
-    margin-left: -15px;
-  }
-
   .course-item-header h1 {
     font-size: 25px !important;
     letter-spacing: 5px;
@@ -1390,19 +1405,6 @@ footer .footer-submenu-cr p {
   }
   #bite-menu-item p:first-of-type {
     font-size: 23px !important;
-  }
-
-  #bite-menu-item {
-    position: relative;
-  }
-
-  #bite-menu-item::after {
-    position: absolute;
-    content: "";
-    top: -5px;
-    width: 70%;
-    height: 1px;
-    background: var(--bs-secondary);
   }
 }
 
@@ -2442,7 +2444,7 @@ footer .footer-submenu-cr p {
   // background: #393939d6;
   letter-spacing: 10px;
   transition: all ease 0.3s;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
 
   // background-color: var(--bs-secondary);
   border: 3px solid #fff;
@@ -2454,7 +2456,7 @@ footer .footer-submenu-cr p {
   transform: scale(1.05);
   // background-color: var(--bs-dark);
   color: var(--bs-secondary) !important;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg-small.jpg);
+  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

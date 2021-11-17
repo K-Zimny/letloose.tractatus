@@ -2639,31 +2639,31 @@ footer .footer-submenu-cr p {
 
 // Comment out when ready to show ecommerce page for reservation booking
 
-body.woocommerce::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  height: 100%;
-  background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
-  background-size: contain;
-  background-position: center;
-  z-index: 9;
-}
-body.woocommerce::after {
-  position: absolute;
-  color: #fff;
-  top: 40vh;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  content: "Reservation Booking is not available at this time. Check back with us soon! - The Let Loose Team";
-  height: 100%;
-  z-index: 99;
-  font-family: "Fredericka the Great", cursive;
-  font-size: 45px;
-}
+// body.woocommerce::before {
+//   position: absolute;
+//   inset: 0;
+//   content: "";
+//   height: 100%;
+//   background: url(https://www.letloosechicago.com/wp-content/uploads/2021/11/chalk-bg.jpg);
+//   background-size: contain;
+//   background-position: center;
+//   z-index: 9;
+// }
+// body.woocommerce::after {
+//   position: absolute;
+//   color: #fff;
+//   top: 40vh;
+//   left: 50%;
+//   transform: translate(-50%, 0%);
+//   content: "Reservation Booking is not available at this time. Check back with us soon! - The Let Loose Team";
+//   height: 100%;
+//   z-index: 99;
+//   font-family: "Fredericka the Great", cursive;
+//   font-size: 45px;
+// }
 
-@media only screen and (max-width: 767px) {
-  body.woocommerce::after {
-    font-size: 25px;
-  }
-}
+// @media only screen and (max-width: 767px) {
+//   body.woocommerce::after {
+//     font-size: 25px;
+//   }
+// }
